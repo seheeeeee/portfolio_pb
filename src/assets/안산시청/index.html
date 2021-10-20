@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-ico">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <title>안산시청에 오신 것을 환영합니다.</title>
+    <script>
+        $(function () {
+            $('.h_lang').click(function () {
+                $(".sub_lang").toggleClass('on');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="inner_header">
+                <div class="header_top">
+                    <div class="header_lnb">
+                        <a href="#a">안산시청</a>
+                        <a href="#a">상록수보건소</a>
+                        <a href="#a">단원보건소</a>
+                    </div>
+                    <div class="header_sns">
+                        <a href="#">
+                            <img src="img/header_facebook.png" alt="facebook 바로가기">
+                        </a>
+                        <a href="#">
+                            <img src="img/header_twitter.png" alt="twitter 바로가기">
+                        </a>
+                        <a href="#">
+                            <img src="img/header_kakao.png" alt="kakao 바로가기">
+                        </a>
+                        <a href="#">
+                            <img src="img/header_blog.png" alt="blog 바로가기">
+                        </a>
+                        <a href="#">
+                            <img src="img/header_instagram.png" alt="instagram 바로가기">
+                        </a>
+                    </div>
+                </div>
+                <div class="header_top_shadow"></div>
+                <div class="header_btm">
+                    <div class="header_btm_left">
+                        <h1 class="logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="안산시청">
+                            </a>
+                        </h1>
+                        <a href="#" class="flag"><img src="img/header_flag.jpg" alt=""></a>
+                        <p class="h_weather">
+                            <strong>11월 25일 17시 기준 6.0℃</strong>
+                            미세먼지 <em>28㎍/m³</em>
+                        </p>
+                    </div>
+                    <div class="header_btm_right">
+                        <ul class="h_lang">
+                            <li>
+                                <a href="#">LANGUAGE</a>
+                                <ul class="sub_lang on">
+                                    <li><a href="#">English</a></li>
+                                    <li><a href="#">中國語</a></li>
+                                    <li><a href="#">Russia</a></li>
+                                    <li><a href="#">Vietnam</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn_all">
+                            <img src="img/sitemap_icon.png" alt="사이트맵 열기">
+                        </a>
+                        <div class="find_box">
+                            <input type="text" placeholder="검색어입력">
+                            <button class="btn_find">찾기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav id="gnb">
+            <div class="inner_gnb">
+                <ul class="depth1">
+                    <li>
+                        <a href="#">
+                            <span>시민참여</span>
+                        </a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>시민참여</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">자유게시판</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">칭찬합시다</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">칭찬합시다</a></li>
+                                            <li><a href="#">칭찬공무원 추천</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">좋아요</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시민의 소리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">체험/시설 예약신청</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">체험프로그램 소개</a></li>
+                                            <li><a href="#">예약하기</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시민제안</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">제안이란</a></li>
+                                            <li><a href="#">제안방법</a></li>
+                                            <li><a href="#">제안하기</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">적극행정</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">적극행정과 소극행정</a></li>
+                                            <li><a href="#">적극행정 추진방안</a></li>
+                                            <li><a href="#">적극행정 우수사례 소개</a></li>
+                                            <li><a href="#">적극행정 우수공무원/정책추천</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">사이버반상회</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">반상회소식</a></li>
+                                            <li><a href="#">건의사항</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">도시기본계획 제안방</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">시민제안방</a></li>
+                                            <li><a href="#">청소년제안방</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">작은사랑 큰보람</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">후원사업안내</a></li>
+                                            <li><a href="#">홍보관</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">지역경제활성화</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">4.16 세월호 참사</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">4.16 세월호참사 현황</a></li>
+                                            <li><a href="#">추모글 남기기</a></li>
+                                            <li><a href="#">추모사업 추진</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">신청하기</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">대학생 등록금 민간지원</a></li>
+                                            <li><a href="#">자동차극장</a></li>
+                                            <li><a href="#">생생카셰어</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>민원안내</span>
+                        </a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>민원안내</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">종합민원안내</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">365행복드림민원실</a></li>
+                                            <li><a href="#">안산시민원콜센터</a></li>
+                                            <li><a href="#">민원편람</a></li>
+                                            <li><a href="#">민원서식</a></li>
+                                            <li><a href="#">행정정보공동이용</a></li>
+                                            <li><a href="#">사전심사청구제/사전상담예약제</a></li>
+                                            <li><a href="#">민원 1회 방문 처리제</a></li>
+                                            <li><a href="#">전화&middot;구술 신청가능 민원</a></li>
+                                            <li><a href="#">정부3.0원스톱서비스</a></li>
+                                            <li><a href="#">정부긴급재난지원금</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">민원신청</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">온라인민원</a></li>
+                                            <li><a href="#">무인민원발급기</a></li>
+                                            <li><a href="#">민원상담 및 접수 안내</a></li>
+                                            <li><a href="#">여권발급</a></li>
+                                            <li><a href="#">제증명발급</a></li>
+                                            <li><a href="#">행정사신고</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">민원서비스</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">행정서비스헌장/민원인 권리 헌장</a></li>
+                                            <li><a href="#">명예민원실장제 운영</a></li>
+                                            <li><a href="#">무료법률상담실</a></li>
+                                            <li><a href="#">110번화상수화 통역서비스</a></li>
+                                            <li><a href="#">시민옴부즈만</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">신고센터</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">공익신고센터</a></li>
+                                            <li><a href="#">공직자 부조리 신고</a></li>
+                                            <li><a href="#">불친절 공무원</a></li>
+                                            <li><a href="#">복지부정 신고센터</a></li>
+                                            <li><a href="#">예산낭비 신고센터</a></li>
+                                            <li><a href="#">식품안전성검사시민청구</a></li>
+                                            <li><a href="#">부동산 거래계약신고</a></li>
+                                            <li><a href="#">부동산 불법거래 신고</a></li>
+                                            <li><a href="#">규제신고</a></li>
+                                            <li><a href="#">대중교통 불편신고</a></li>
+                                            <li><a href="#">불법화물 사이버 신고센터</a></li>
+                                            <li><a href="#">아동학대 신고</a></li>
+                                            <li><a href="#">유기(분실)동물신고</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">자치법규</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span>안산소개</span></a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>안산소개</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">안산의 역사</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">안산시유래</a></li>
+                                            <li><a href="#">연혁(행정구역 변천)</a></li>
+                                            <li><a href="#">안산시 위치/지도</a></li>
+                                            <li><a href="#">행정구역외국어표기</a></li>
+                                            <li><a href="#">동별유래</a></li>
+                                            <li><a href="#">역대안산시장</a></li>
+                                            <li><a href="#">안산시사</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">안산시상징물</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">시의 마크&middot;상징물</a></li>
+                                            <li><a href="#">CI&middot;BI 통합매뉴얼</a></li>
+                                            <li><a href="#">시의 나무</a></li>
+                                            <li><a href="#">시의 꽃</a></li>
+                                            <li><a href="#">시의 새</a></li>
+                                            <li><a href="#">안산시민의 노래</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">안산시현황</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">안산시현황</a></li>
+                                            <li><a href="#">안산시통계</a></li>
+                                            <li><a href="#">행정박물 선물&middot;기념류</a></li>
+                                            <li><a href="#">행정박물 상&middot;훈장류</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">자매우호도시</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">자매도시(국외)</a></li>
+                                            <li><a href="#">우호협력도시(국외)</a></li>
+                                            <li><a href="#">자매결연도시(국내)</a></li>
+                                            <li><a href="#">자매결연도시 특산품</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">공연/전시/행사/문화재</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">정보안내</a></li>
+                                            <li><a href="#">단원김흥도</a></li>
+                                            <li><a href="#">문화인물/문화재</a></li>
+                                            <li><a href="#">문화유적탐방</a></li>
+                                            <li><a href="#">시립예술단</a></li>
+                                            <li><a href="#">생생 예술비빔밥</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">관광</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">도시디자인</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">경관계획&middot;가이드라인</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">포토갤러리</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시정소식지&lt;안산톡톡&gt;</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">시정소식지 안산톡톡</a></li>
+                                            <li><a href="#">시정소식지&lt;안산톡톡&gt; 무료 신청</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span>시정안내</span></a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>시정안내</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">열린시장실</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시청사안내</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">조직도</a></li>
+                                            <li><a href="#">부서자료실</a></li>
+                                            <li><a href="#">청사배치도</a></li>
+                                            <li><a href="#">시청오시는 길</a></li>
+                                            <li><a href="#">부설주차장(장애인 주차표기)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시정운영</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">시정방침</a></li>
+                                            <li><a href="#">시정계획</a></li>
+                                            <li><a href="#">수상내역</a></li>
+                                            <li><a href="#">시정백서</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시정소식</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">새소식</a></li>
+                                            <li><a href="#">인사정보</a></li>
+                                            <li><a href="#">채용정보</a></li>
+                                            <li><a href="#">타기관소식</a></li>
+                                            <li><a href="#">입찰수의계약</a></li>
+                                            <li><a href="#">입법예고</a></li>
+                                            <li><a href="#">고시/공고</a></li>
+                                            <li><a href="#">안산시보</a></li>
+                                            <li><a href="#">설명자료</a></li>
+                                            <li><a href="#">카드뉴스</a></li>
+                                            <li><a href="#">보도자료</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">월별행사안내</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">코로나19 감염증</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">상황보고 드립니다.</a></li>
+                                            <li><a href="#">홍보자료 및 보도자료</a></li>
+                                            <li><a href="#">일일방역현황</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span>정보공개</span></a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>정보공개</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">계약정보공개</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">행정정보공개</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">정보공개제도안내</a></li>
+                                            <li><a href="#">사전정보공표</a></li>
+                                            <li><a href="#">사전정보게시판</a></li>
+                                            <li><a href="#">정보공개관련정보</a></li>
+                                            <li><a href="#">비공개대상정보세부기준</a></li>
+                                            <li><a href="#">정보공개청구</a></li>
+                                            <li><a href="#">정보목록</a></li>
+                                            <li><a href="#">공유재산 정보공개</a></li>
+                                            <li><a href="#">감사결과 공개</a></li>
+                                            <li><a href="#">조직정보 공개</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">공공데이터개방</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">정책실명제</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">정책실명제 안내</a></li>
+                                            <li><a href="#">정책실명제 공개목록</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">업무추진비</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">전년도총괄내역</a></li>
+                                            <li><a href="#">연도별 업무추진비</a></li>
+                                            <li><a href="#">부서별 업무추진비</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">예산공개 재정공시</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">세입지출 운용상황</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">공무국외여행현황</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">시민만족도</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">용역결과물공개</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">장애인기업제품 구매실적</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><span>분야별정보</span></a>
+                        <div class="sub">
+                            <div class="sub_contents">
+                                <div class="sub_title">
+                                    <h2>분야별정보</h2>
+                                    <p>살맛나는 생생도시 안산!</p>
+                                </div>
+                                <ul class="depth2">
+                                    <li>
+                                        <a href="#" class="dep2_tit">사회복지</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">사회복지</a></li>
+                                            <li><a href="#">여성복지</a></li>
+                                            <li><a href="#">아동복지</a></li>
+                                            <li><a href="#">장애인복지</a></li>
+                                            <li><a href="#">노인복지</a></li>
+                                            <li><a href="#">보육지원</a></li>
+                                            <li><a href="#">청소년</a></li>
+                                            <li><a href="#">장사정보</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">경제/일자리</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">취업정보</a></li>
+                                            <li><a href="#">안산일자리센터</a></li>
+                                            <li><a href="#">안산화폐 다온</a></li>
+                                            <li><a href="#">지역상품&middot;지역업체 알림 창구</a></li>
+                                            <li><a href="#">코로나19 소상공인 지원</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">부동산</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">토지이용계획</a></li>
+                                            <li><a href="#">개별공시지가</a></li>
+                                            <li><a href="#">개별주택가격</a></li>
+                                            <li><a href="#">공동주택가격</a></li>
+                                            <li><a href="#">등기부등본열람</a></li>
+                                            <li><a href="#">주소&middot;지도 검색</a></li>
+                                            <li><a href="#">중개수수료</a></li>
+                                            <li><a href="#">세움터건축행정시스템</a></li>
+                                            <li><a href="#">시가표준액정보</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">도시계획</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">지구단위계획</a></li>
+                                            <li><a href="#">재건축정보</a></li>
+                                            <li><a href="#">시설물</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">체육시설</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">체육시설 현황(91개소)</a></li>
+                                            <li><a href="#">어린이 놀이시설현황(8개소)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">교통</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">교통업무관련부서</a></li>
+                                            <li><a href="#">교통행정업무안내</a></li>
+                                            <li><a href="#">교통관련단체(업체)</a></li>
+                                            <li><a href="#">대중교통이용안내</a></li>
+                                            <li><a href="#">공영유료주차장이용</a></li>
+                                            <li><a href="#">차량등록안내</a></li>
+                                            <li><a href="#">수도권대중교통정보</a></li>
+                                            <li><a href="#">철도사업안내</a></li>
+                                            <li><a href="#">도로굴착공사안내</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">환경</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">환경</a></li>
+                                            <li><a href="#">폐기물</a></li>
+                                            <li><a href="#">재활용</a></li>
+                                            <li><a href="#">나무은행</a></li>
+                                            <li><a href="#">대기오염정보센터</a></li>
+                                            <li><a href="#">하천수질</a></li>
+                                            <li><a href="#">하수도 방류수질</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">소비자</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">소비자 피해상담</a></li>
+                                            <li><a href="#">소비자보호단체</a></li>
+                                            <li><a href="#">식품안전관리</a></li>
+                                            <li><a href="#">물가/유가/착한가격업소</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">민방위</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">민방위제도</a></li>
+                                            <li><a href="#">민방위대 편성</a></li>
+                                            <li><a href="#">교육장안내</a></li>
+                                            <li><a href="#">주민신고</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">태양광발전기보급</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">태양광발전기보급 신청</a></li>
+                                            <li><a href="#">공급제품 현황</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">마을만들기</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">희망마을사업 추진단</a></li>
+                                            <li><a href="#">마을만들기지원센터</a></li>
+                                            <li><a href="#">마을살이맵</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">생활정보</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">통계소통지도</a></li>
+                                            <li><a href="#">주거지분석맵</a></li>
+                                            <li><a href="#">납세자 보호관</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="dep2_tit">아동친화도시</a>
+                                        <ul class="depth3">
+                                            <li><a href="#">아동친화도시 소개</a></li>
+                                            <li><a href="#">아동친화도시 안산</a></li>
+                                            <li><a href="#">유엔아동권리 협약</a></li>
+                                            <li><a href="#">아동참여위원회</a></li>
+                                            <li><a href="#">공지사항</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main id="main">
+            <div class="inner_main">
+                <div class="main_top">
+                    <h2 class="main_logo cf">
+                        <div>
+                            <p>젊음과 혁신으로</p>
+                            <strong>성장하는 사람중심</strong>
+                        </div>
+                        <img src="img/inner_box_title01.png" alt="생생도시">
+                        <span>안산은 지금! 소식을 전해드립니다.</span>
+                    </h2>
+                    <div class="subject_box">
+                        <a href="#" class="on sbjBtn"><span>소식</span></a>
+                        <a href="#" class="sbjBtn">민원</a>
+                        <a href="#" class="sbjBtn">관광</a>
+                    </div>
+                </div>
+                <section class="contents">
+                    <div class="cont_top cf">
+                        <div class="con1">
+                            <img src="img/con1_1.gif" alt="위기가구긴급생계지원">
+                            <div class="ctrl_box">
+                                <button class="ctrlBtn bf">이전</button>
+                                <div class="count">
+                                    <span class="c_current" >9</span>
+                                    <span class="c_all" >/11</span>
+                                </div>
+                                <button class="ctrlBtn stop">정지</button>
+                                <button class="ctrlBtn af">다음</button>
+                            </div>
+                        </div>
+                        <div class="con2">
+                            <a href="#" targer="_blank"><span>안산시의회</span></a>
+                            <a href="#" targer="_blank"><span>안산드림TV</span></a>
+                            <a href="#" targer="_blank"><span>상록구청</span></a>
+                            <a href="#" targer="_blank"><span>단원구청</span></a>
+                            <a href="#" targer="_blank" class="system"><span>조직도</span></a>
+                        </div>
+                        <div class="con3">
+                            <h3>
+                                <a href="#">열린시장실</a>
+                            </h3>
+                            <img src="img/mayor_name.png">
+                            <ul class="con3_list">
+                                <li><a href="#">인사말</a></li>
+                                <li><a href="#">공약&amp;매니페스토</a></li>
+                                <li><a href="#">안산시장24시</a></li>
+                                <li><a href="#">시민의소리</a></li>
+                                <li><a href="#">취임사</a></li>
+                            </ul>
+                            <div>
+                                <a href="#">
+                                    안산화폐<strong>다온</strong>
+                                </a>
+                                <a href="#">열린시장실</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont_btm cf">
+                        <div class="con4">
+                            <h3>
+                                <span>안산시정뉴스(e-안산톡톡)</span>
+                                <button class="moreBtn">+</button>
+                            </h3>
+                            <a href="#">
+                                <div class="content">
+                                    <div class="content_bg">
+                                        <img src="img/con4_1.jpg" alt="">
+                                    </div>
+                                    <div class="content_desc">
+                                        <strong>윤화섭 시장, 조두순 부인 주소 이전&middot;&middot;&middot;</strong>
+                                        <span>3시간 57분전</span>
+                                    </div>
+                                    <div class="ctrl_box">
+                                        <button class="ctrlBtn bf"></button>
+                                        <button class="ctrlBtn af"></button>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="con5">
+                            <div class="tit_box cf">
+                                <a href="#" class="on">새소식</a>
+                                <a href="#">고시공고</a>
+                                <a href="#">입찰정보</a>
+                                <a href="#">보도자료</a>
+                                <a href="#">채용정보</a>
+                                <button class="moreBtn">+</button>
+                            </div>
+                            <div class="content">
+                                <div class="content_top">
+                                    <p>2020년 가정용 저녹스보일러 지원사업 접수 마감 안내(수정)</p>
+                                    <p>
+                                        2020년 안산시 가정용 저녹스보일러 설치 지원사업 접수 마감 이후,
+                                        취소분 포함 잔여물량에 대한 추가 접수를 붙임과 같이 안내합니다
+                                        ■ 사전신청하려는 자는 붙임파일의 양식 [제3호서식]을 작성 후
+                                    </p>
+                                </div>
+                                <div class="content_btm">
+                                    <ul>
+                                        <li>
+                                            <a href="#">사회적 거리두기 단계별 1회용품 사용규제 적용방안(가이드라인)알림 </a>
+                                            <span class="date">2020-11-26</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">안산시 골목상권 시장상권 매니저 모집(재)공고</a>
+                                            <span class="date">2020-11-26</span>
+                                        </li>
+                                        <li>
+                                            <a href="#">제2회 한국전통문화재 영산재 개최 알림</a>
+                                            <span class="date">2020-11-25</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="con6">
+                            <h3>
+                                <em>팝업존</em>
+                                <span><strong>4</strong>/11</span>
+                                <div class="ctrl_box">
+                                    <button class="ctrlBtn bf"></button>
+                                    <button class="ctrlBtn stop"></button>
+                                    <button class="ctrlBtn af"></button>
+                                </div>
+                            </h3>
+                            <div class="content">
+                                <a href="#">
+                                    <img src="img/con6_1.gif" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer id="footer">
+            <nav class="f_lnb">
+                <div class="inner_f_lnb">
+                    <button class="f_lnb1">관련사이트</button>
+                    <button class="f_lnb2">소속/유관기관 홈페이지</button>
+                    <button class="f_lnb3">실/과/소 부서안내</button>
+                    <button class="f_lnb4">구청 및 행정복지센터</button>
+                </div>
+            </nav>
+            <section class="footer">
+                <div class="inner_footer">
+                    <div class="footer_top">
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">홈페이지이용안내</a>
+                        <a href="#">저작권정책</a>
+                        <a href="#">개인정보위탁현황</a>
+                        <a href="#">행정서비스헌장</a>
+                        <a href="#">뷰어다운로드</a>
+                        <a href="#">RSS 서비스</a>
+                        <a href="#">사이트맵</a>
+                        <a href="#">찾아오시는길</a>
+                    </div>
+                    <div class="footer_btm cf">
+                        <h2><img src="img/footer_logo.png" alt=""></h2>
+                        <p class="cs">
+                            <span>안산시민원콜센터</span>
+                            <strong>1666-1234</strong>
+                        </p>
+                        <div class="etc">
+                            <p>15335 경기도 안산시 단원구 화랑로 387(고잔동)</p>
+                            <p>COPYRIGHT &copy;2019 ANSAN CITY HALL</p>
+                        </div>
+                        <div class="mark">
+                            <img src="img/wa_mark.png" alt="">
+                            <img src="img/footer_icon1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+</body>
+
+</html>

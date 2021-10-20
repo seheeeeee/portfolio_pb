@@ -4,10 +4,9 @@
     <div>
       <h2>Semantic Web</h2>
       <ul>
-        <li v-for="item in items" :key="item"></li>
+        <li v-for="item in items" :key="item.pages.name">{{item.pages[0].name}}</li>
       </ul>
     </div>
-    <router-link to="/Kwater"></router-link>
   </div>
 </template>
 
@@ -24,7 +23,7 @@ export default {
               src : '/수자원공사/index.html'
             },
             {
-              name: '안산시청',
+              name : '안산시청',
               src : '/안산시청/index.html'
             }
           ],
