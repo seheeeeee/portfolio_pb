@@ -4,16 +4,35 @@
     <section>
       <h2>Semantic Web</h2>
       <ul>
-        <li v-for="page in pages" :key="page.name">
-          <span class="itemTit">{{page.name}}</span>
+        <li v-for="semanticPage in semanticPages" :key="semanticPage.name">
+          <span class="itemTit">{{semanticPage.name}}</span>
           <div class="content">
             <div class="imgBox">
               <p>img</p>
             </div>
             <div class="detailBox">
-              {{page.content}}
+              {{semanticPage.content}}
             </div>
-            <router-link :to="{path : page.link}" target="_blank">
+            <router-link :to="{path : semanticPage.link}" target="_blank">
+              <button class="goBtn">Go on</button>
+            </router-link>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Responsive Web</h2>
+      <ul>
+        <li v-for="responsivePages in responsivePages" :key="responsivePages.name">
+          <span class="itemTit">{{responsivePages.name}}</span>
+          <div class="content">
+            <div class="imgBox">
+              <p>img</p>
+            </div>
+            <div class="detailBox">
+              {{responsivePages.content}}
+            </div>
+            <router-link :to="{path : responsivePages.link}" target="_blank">
               <button class="goBtn">Go on</button>
             </router-link>
           </div>
@@ -27,9 +46,21 @@
 export default {
   data(){
     return {
-      pages: [
+      semanticPages: [
         {
           name : '수자원공사',
+          link : '/site-kwater',
+          content: '수자원공사 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
+        },
+        {
+          name : '안산시청',
+          link : '/site-ansan',
+          content: '안산시청 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
+        },
+      ],
+      responsivePages: [
+        {
+           name : '수자원공사',
           link : '/site-kwater',
           content: '수자원공사 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
         },
