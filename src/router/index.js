@@ -53,5 +53,13 @@ export const router = new VueRouter({
       path: '/scheduler',
       beforeEnter() {location.href = 'https://seheeeeee.github.io/scheduler/'}
     },
+    {
+      path: '/site-ansan',
+      beforeEnter() {location.href = 'https://seheeeeee.github.io/site-ansancity/'}
+    },
+    {
+      path: '/site-kwater',
+      beforeEnter() {location.href = 'https://seheeeeee.github.io/site-kwater/'}
+    },
   ]
 });
