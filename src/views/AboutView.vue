@@ -303,14 +303,6 @@ export default {
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-/* .numBox{
-  padding-right: 50px;
-  font-size: 20rem;
-  text-align: right;
-  line-height: 0;
-  font-family: 'Tinos', serif;
-  white-space: nowrap;
-} */
 .content span.box002,
 .content p.cc{
   font-family: 'Tinos', serif;

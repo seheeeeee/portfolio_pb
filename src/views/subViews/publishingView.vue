@@ -5,17 +5,16 @@
       <h2>Semantic Web</h2>
       <ul>
         <li v-for="semanticPage in semanticPages" :key="semanticPage.name">
-          <span class="itemTit">{{semanticPage.name}}</span>
+          <!-- <span class="itemTit">{{semanticPage.name}}</span> -->
           <div class="content">
-            <div class="imgBox">
-              <p>img</p>
-            </div>
+            <router-link :to="{path : semanticPage.link}" target="_blank">
+              <div class="imgBox">
+                <img :src="require(`../../img/${semanticPage.pageImgURL}`)" alt="">
+              </div>
+            </router-link>
             <div class="detailBox">
               {{semanticPage.content}}
             </div>
-            <router-link :to="{path : semanticPage.link}" target="_blank">
-              <button class="goBtn">Go on</button>
-            </router-link>
           </div>
         </li>
       </ul>
@@ -24,17 +23,22 @@
     <section>
       <h2>Responsive Web</h2>
       <ul>
-        <li v-for="responsivePages in responsivePages" :key="responsivePages.name">
-          <span class="itemTit">{{responsivePages.name}}</span>
+        <li v-for="responsivePage in responsivePages" :key="responsivePage.name">
+          <!-- <span class="itemTit">{{responsivePage.name}}</span> -->
           <div class="content">
-            <div class="imgBox">
-              <p>img</p>
-            </div>
+            <router-link :to="{path : responsivePage.link}" target="_blank">
+              <div class="imgBox">
+                <img :src="require(`../../img/${responsivePage.pageImgURL}`)" alt="">
+              </div>
+            </router-link>
             <div class="detailBox">
-              {{responsivePages.content}}
+              {{responsivePage.content}}
             </div>
-            <router-link :to="{path : responsivePages.link}" target="_blank">
-              <button class="goBtn">Go on</button>
+            <router-link :to="{path : responsivePage.link}" target="_blank">
+              <div class="mimgBox">
+                <img :src="require(`../../img/${responsivePage.mPageImgURL[0]}`)" alt="">
+                <img :src="require(`../../img/${responsivePage.mPageImgURL[1]}`)" alt="">
+              </div>
             </router-link>
           </div>
         </li>
@@ -51,21 +55,25 @@ export default {
     return {
       semanticPages: [
         {
-          name : '수자원공사',
+          name : 'K-WATER',
           link : '/site-kwater',
-          content: '수자원공사 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
+          pageImgURL: 'kWater1.png',
+          content: 'K-Water. marked up using HTML and CSS and created an automatic banner width JS.'
         },
         {
-          name : '안산시청',
+          name : 'ANSAN CITY',
           link : '/site-ansan',
-          content: '안산시청 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
+          pageImgURL: 'ansan1.png',
+          content: 'Ansan-city. marked up using HTML and CSS and created an automatic banner width JS.'
         },
       ],
       responsivePages: [
         {
-           name : '29CM',
+          name : '29CM',
           link : '/site-29CM',
-          content: '29CM 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 반응형 웹으로 퍼블리싱하였습니다.'
+          pageImgURL: '29cm1.png',
+          mPageImgURL: ['m_29cm1.png', 'm_29cm2.png'],
+          content: '29CM. marked up using HTML and CSS and created an automatic banner width JS. Also, It is designed as a responsive web layout.'
         },
       ],
       pageNum: '004',
@@ -85,28 +93,35 @@ export default {
 }
 
 .pubWrap section{
-  margin: 0 5%;
+  margin: 700px 5% 0;
   font-family: 'Barlow', sans-serif;
   width: 90%;
   height: 100%;
   text-align: center;
   padding-bottom: 300px;
-  border-bottom: 1px solid green;
+  /* border-bottom: 1px solid green; */
+}
+.pubWrap section:nth-of-type(1){
+  margin-top: 425px;
+  margin-bottom: 350px;
 }
 .pubWrap section h2{
-  color: #1f1f1f;
+  width: 80%;
+  color: #fff;
+  background-color: #1f1f1f;
   font-weight: 700;
   font-size: 2rem;
   line-height: 1.2;
-  margin-bottom: 30px;
+  margin-bottom: 200px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  transform: translateX(-400px);
 }
 .pubWrap section ul{
   margin: 0 auto;
-  width: 50%;
-  min-width: 400px;
-  max-width: 700px;
+  width: 100%;
+  /* min-width: 400px;
+  max-width: 700px; */
   height: 100%;
   /* display: flex;
   justify-content: space-around; */
@@ -114,8 +129,12 @@ export default {
 }
 .pubWrap section ul li{
   flex: 1;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 50px 30px;
+  margin-top: 400px;
+}
+.pubWrap section ul li:first-child{
+  margin-top: 0;
 }
 .itemTit{
   display: block;
@@ -129,32 +148,79 @@ export default {
 }
 .pubWrap section .content .imgBox{
   width: 90%;
-  margin-left: 5%;
-  margin-bottom: 30px;
-  height: 300px;
-  background-color: #000;
+  margin: 0 auto 30px;
+  height: 100%;
+  /* transition: all .3s; */
+  position: relative;
 }
+.pubWrap section .content .imgBox::after{
+  opacity: 0;
+  transition: all .7s;
+}
+.pubWrap section .content .imgBox:hover::before{
+  content: 'go on';
+  color: #fff;
+  font-size: 60px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
+  letter-spacing: -2.5px;
+  text-shadow: 0px 0px 5px rgba(0,0,0,1);
+  text-align: center;
+  background: url('../../img/diagonal.png');
+  border-radius: 20px 20px 0 20px;
+  display: block;
+  width: 200px;
+  height: 70px;
+  line-height: 51px;
+  position: absolute; 
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 11;
+  opacity: 0.8;
+}
+.pubWrap section .content .imgBox:hover::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: absolute; 
+  left: 0;
+  top: 0;
+  z-index: 10;
+  opacity: 0.6;
+}
+.pubWrap section .content .imgBox img{
+  display: block;
+  width: 100%;
+}
+
 .pubWrap section .content .detailBox{
   width: 90%;
-  margin-left: 5%;
-  text-align: left;
-  font-size: 18px;
-  margin-bottom: 50px;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+  margin: 180px auto 50px;
+  text-align: right;
 }
-.goBtn{
-  padding: 5px 30px;
-  font-size: 18px;
-  background-color: lightcoral;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.4);
-  transition: all .3s;
+.mimgBox{
+  width: 90%;
+  margin: 350px auto 0;
 }
-.goBtn:hover,
-.goBtn:focus{
-  color: lightcoral;
-  background-color: transparent;
-  box-shadow: none;
+.mimgBox img{
+  display: inline-block;
+  width: 40%;
+  min-width: 400px;
+  margin-right: 300px;
 }
+.mimgBox img:nth-child(2){
+  margin-right: 0;
+  transform: translateY(300px);
+  width: 30%;
+  min-width: 300px;
+}
+
 </style>
