@@ -13,12 +13,22 @@
         <strong class="underBar">References</strong>
       </div>
     </div>
+    <num-box :pageNum="pageNum"></num-box>
   </div>
 </template>
 
 <script>
-export default {
+import numBox from '../components/numberBox.vue';
 
+export default {
+  components: {
+    numBox,
+  },
+  data(){
+    return{
+      pageNum: '003',
+    }
+  },
 }
 </script>
 
@@ -27,6 +37,7 @@ export default {
   width: 100%;
   height: 100vh;
   padding: 300px 0;
+  position: relative;
 }
 .contactWrap h1{
   font-size: 7.5rem;
@@ -45,5 +56,11 @@ export default {
   position: relative;
   font-size: 1.5rem;
   color: #000;
+}
+.numBox{
+  position: absolute;
+  right: 300px;
+  top: 1400px;
+  transform: translateX(50%);
 }
 </style>

@@ -13,12 +13,17 @@
         </router-link>
       </li>
     </ul>
-    
+    <num-box :pageNum="pageNum"></num-box>
   </div>
 </template>
 
 <script>
+import numBox from '../components/numberBox.vue';
+
 export default {
+  components: {
+    numBox,
+  },
   data(){
     return {
       projects: [
@@ -38,6 +43,7 @@ export default {
           comment: 'Vue.js 프레임워크를 사용하여 스케쥴링 어플리케이션을 만들었습니다.',
         },
       ],
+      pageNum: '002',
     }
   }
 }
@@ -48,6 +54,7 @@ export default {
   width: 100%;
   /* height: 100vh; */
   padding: 300px 0;
+  position: relative;
 }
 
 #pjts{
@@ -67,5 +74,11 @@ export default {
 }
 .bgBox:hover{
   background-color: rgba(0,0,0,0.8);
+}
+.numBox{
+  position: absolute;
+  right: 300px;
+  top: 1400px;
+  transform: translateX(50%);
 }
 </style>

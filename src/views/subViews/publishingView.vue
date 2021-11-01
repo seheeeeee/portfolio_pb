@@ -20,6 +20,7 @@
         </li>
       </ul>
     </section>
+    <num-box :pageNum="pageNum"></num-box>
     <section>
       <h2>Responsive Web</h2>
       <ul>
@@ -43,6 +44,8 @@
 </template>
 
 <script>
+import numBox from '../../components/numberBox.vue';
+
 export default {
   data(){
     return {
@@ -60,18 +63,17 @@ export default {
       ],
       responsivePages: [
         {
-           name : '수자원공사',
-          link : '/site-kwater',
-          content: '수자원공사 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
-        },
-        {
-          name : '안산시청',
-          link : '/site-ansan',
-          content: '안산시청 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 javascript로 자동 banner 구현하였습니다.'
+           name : '29CM',
+          link : '/site-29CM',
+          content: '29CM 홈페이지를 HTML5, CSS3를 이용하여 마크업하고 반응형 웹으로 퍼블리싱하였습니다.'
         },
       ],
+      pageNum: '004',
     }
   },
+  components: {
+    numBox,
+  }
 }
 </script>
 
@@ -101,10 +103,14 @@ export default {
   text-transform: uppercase;
 }
 .pubWrap section ul{
-  width: 100%;
+  margin: 0 auto;
+  width: 50%;
+  min-width: 400px;
+  max-width: 700px;
   height: 100%;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
+  
 }
 .pubWrap section ul li{
   flex: 1;

@@ -13,7 +13,7 @@
           <p>Welcome to my page</p>
           <p>SeHee is a person that makes alter-ego multidisciplinary design.</p>
         </div>
-        <div class="box001">001</div>
+        <num-box :pageNum="pageNum"></num-box>
         <div class="part2">
           <p>
             We can’t predict the future even in a minute, we get to think of life as an inexhaustible well. 
@@ -107,14 +107,22 @@
 </template>
 
 <script>
-import { pageHeight } from '../api/index'
+import numBox from '../components/numberBox.vue';
 
 export default {
+  components: {
+    numBox,
+  },
+  data(){
+    return{
+      pageNum: '001',
+    }
+  },
   methods: {
     showContent(){
       window.addEventListener('scroll', () =>{
         let pageYOffset = window.pageYOffset;
-        console.log(parseInt(pageYOffset));
+        // console.log(parseInt(pageYOffset));
 
         let part1 = document.querySelector('.part1');
         let part2 = document.querySelector('.part2');
@@ -173,8 +181,6 @@ export default {
 
   },
   mounted() {
-    var wrap = document.querySelector('.wrap');
-    pageHeight(wrap);
     this.showContent();
   },
 }
@@ -297,14 +303,14 @@ export default {
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-.content div.box001{
+/* .numBox{
   padding-right: 50px;
   font-size: 20rem;
   text-align: right;
   line-height: 0;
   font-family: 'Tinos', serif;
   white-space: nowrap;
-}
+} */
 .content span.box002,
 .content p.cc{
   font-family: 'Tinos', serif;
