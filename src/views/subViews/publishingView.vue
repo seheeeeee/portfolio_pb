@@ -1,7 +1,7 @@
 <template>
   <div class="pubWrap">
     <h1 class="title">Web Publishing</h1>
-    <section>
+    <section class="semantic">
       <h2>Semantic Web</h2>
       <ul>
         <li v-for="semanticPage in semanticPages" :key="semanticPage.name">
@@ -20,7 +20,7 @@
       </ul>
     </section>
     <num-box :pageNum="pageNum"></num-box>
-    <section>
+    <section class="responsive">
       <h2>Responsive Web</h2>
       <ul>
         <li v-for="responsivePage in responsivePages" :key="responsivePage.name">
@@ -51,6 +51,9 @@
 import numBox from '../../components/numberBox.vue';
 
 export default {
+    components: {
+    numBox,
+  },
   data(){
     return {
       semanticPages: [
@@ -79,8 +82,47 @@ export default {
       pageNum: '004',
     }
   },
-  components: {
-    numBox,
+  methods:{
+    showContent(){
+      window.addEventListener('scroll', () =>{
+        let pageYOffset = parseInt(window.pageYOffset);
+        // console.log(parseInt(pageYOffset));
+
+        let semantic = document.querySelectorAll('.semantic .content');
+        let responsive = document.querySelector('.responsive .content');
+        let mResponsive = document.querySelector('.responsive .content .mimgBox');
+        
+        for(var i = 0; i < semantic.length; i++){
+          if(pageYOffset > semantic[i].offsetTop-500){
+              semantic[i].classList.add("show");
+          }
+        }
+        if(pageYOffset > responsive.offsetTop-500){
+            responsive.classList.add("show");
+        }
+        if(pageYOffset > mResponsive.offsetTop-700){
+            mResponsive.classList.add("show");
+        }
+      })
+    },
+    removeShow(){
+        let semantic = document.querySelectorAll('.semantic .content');
+        let responsive = document.querySelector('.responsive .content');
+        let mResponsive = document.querySelector('.responsive .content .mimgBox');
+
+        for(var i = 0; i < semantic.length; i++){
+          semantic[i].classList.remove("show");
+        }
+        responsive.classList.remove("show");
+        mResponsive.classList.remove("show");
+
+    }
+  },
+  mounted() {
+    this.showContent();
+  },
+  beforeDestroy(){
+    this.removeShow();
   }
 }
 </script>
@@ -150,7 +192,6 @@ export default {
   width: 90%;
   margin: 0 auto 30px;
   height: 100%;
-  /* transition: all .3s; */
   position: relative;
 }
 .pubWrap section .content .imgBox::after{
@@ -222,5 +263,18 @@ export default {
   width: 30%;
   min-width: 300px;
 }
-
+.semantic .content .imgBox,
+.responsive .content .imgBox,
+.responsive .content .mimgBox{
+  opacity: 0;
+  transform: scale(1.3); 
+  transform-origin: center;
+  transition: all .8s;
+}
+.semantic .content.show .imgBox,
+.responsive .content.show .imgBox,
+.responsive .content .mimgBox.show{
+  opacity: 1;
+  transform: scale(1);
+}
 </style>

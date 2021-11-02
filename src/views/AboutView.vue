@@ -176,10 +176,6 @@ export default {
       })
     },
   },
-  created() {
-    this.showContent();
-
-  },
   mounted() {
     this.showContent();
   },

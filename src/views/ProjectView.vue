@@ -45,7 +45,8 @@ export default {
       ],
       pageNum: '002',
     }
-  }
+  },
+  
 }
 </script>
 
