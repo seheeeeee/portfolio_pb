@@ -6,6 +6,7 @@
         <router-link :to="{path : project.link}">
           <div class="bgBox">
             <h2>{{project.name}}</h2>
+            <mouse-wheel :pjtTitle="project.name"></mouse-wheel>
             <div class="comment">
               {{project.comment}}
             </div>
@@ -19,26 +20,28 @@
 
 <script>
 import numBox from '../components/numberBox.vue';
+import mouseWheel from '../components/mousewheel.vue';
 
 export default {
   components: {
     numBox,
+    mouseWheel,
   },
   data(){
     return {
       projects: [
         {
-          name : 'Publishing',
+          name : 'Web Sites',
           link : '/publishing',
           comment : 'HTML5, CSS3 를 사용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱했습니다.',
         },
         {
-          name : 'JavaScript',
+          name : 'JS projects',
           link : '/script',
           comment: 'vanila JavaScript 를 사용하여 js 미니 프로그램을 만들었습니다.',
         },
         {
-          name : 'Vue.js FrameWork',
+          name : 'Vue.js fw',
           link : '/scheduler',
           comment: 'Vue.js 프레임워크를 사용하여 스케쥴링 어플리케이션을 만들었습니다.',
         },
@@ -67,14 +70,18 @@ export default {
 }
 .bgBox{
   margin: 0 auto;
-  width: 50%;
-  max-width: 700px;
+  width: 90%;
+  /* max-width: 700px; */
   height: 500px;
   background-color: rgba(0,0,0,0.5);
   transition: all .5s;
 }
 .bgBox:hover{
   background-color: rgba(0,0,0,0.8);
+}
+.bgBox h2{
+  font-size: 15rem;
+  text-align: center;
 }
 .numBox{
   position: absolute;
