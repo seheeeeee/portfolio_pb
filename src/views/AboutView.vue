@@ -65,8 +65,8 @@
         <div class="part6 strategy clearFix">
           <ul>
             <li class="subTit">Strategy</li>
-            <li>customer experience</li> 
-            <li>consumer insights </li>
+            <li>user experience</li> 
+            <li>user insights </li>
             <li>trends</li>
             <li>creative ideas</li> 
             <li>service mind</li>

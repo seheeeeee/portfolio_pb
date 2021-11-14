@@ -1,29 +1,31 @@
 <template>
-  <div class="wheelWrap">
-
+  <div :class="strClass">
+      <p v-html="arrStrings" class="strBox"></p>
   </div>
 </template>
 
 <script>
 export default {
-    props: {
-        pjtTitle: String,
-    },
+    props: ['pjtTitle'],
     data(){
         return{
             strTitle: this.pjtTitle,
+            strClass: this.pjtTitle.replace(/ /g, "").replace('.', ""),
+            arr: [],
+            arrStrings: '',
         }
     },
     methods: {
         fetchData(){
-            console.log(this.strTitle);
             let str = this.strTitle.split("");
-            let arr = [];
+            // console.log(this.arr);
+            // let arr = this.arr;
             for(let i = 0; i < str.length; i++){
-                arr.push('<span>'+str[i]+'</span>');
+                this.arr.push('<span>'+str[i]+'</span>');
             }
-            document.querySelector('.wheelWrap').innerHTML = arr.join('');
-        }
+            let arrString = this.arr.toString();
+            this.arrStrings = arrString.replaceAll(',', "");
+        },
     },
     mounted(){
         this.fetchData();
@@ -31,6 +33,16 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+div{
+    width: 100%;
+    text-align: center;
+}
+.strBox{
+    font-size: 18rem;
+    font-family: 'Domine', serif;
+    font-weight: 300;
+    letter-spacing: -8px;
+    color: #000;
+}
 </style>

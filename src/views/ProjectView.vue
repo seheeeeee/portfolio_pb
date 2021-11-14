@@ -5,8 +5,7 @@
       <li v-for="project in projects" :key="project.name">
         <router-link :to="{path : project.link}">
           <div class="bgBox">
-            <h2>{{project.name}}</h2>
-            <mouse-wheel :pjtTitle="project.name"></mouse-wheel>
+            <mouseWheel :pjtTitle="project.name"></mouseWheel>
             <div class="comment">
               {{project.comment}}
             </div>
@@ -15,6 +14,15 @@
       </li>
     </ul>
     <num-box :pageNum="pageNum"></num-box>
+    <div class="part8">
+          <p class="cc">
+            &copy; 2021
+          </p>
+          <p class="footer">
+            <span>NEXT</span>
+            <span class="box002">003 CONTACT</span>
+          </p>
+        </div>
   </div>
 </template>
 
@@ -66,7 +74,11 @@ export default {
   height: 100%;
 }
 #pjts li{
-  margin-bottom: 200px;
+  margin-bottom: 700px;
+}
+#pjts li:first-child{
+  margin-bottom: 1000px;
+  margin-top: 600px;
 }
 .bgBox{
   margin: 0 auto;
@@ -79,14 +91,47 @@ export default {
 .bgBox:hover{
   background-color: rgba(0,0,0,0.8);
 }
-.bgBox h2{
-  font-size: 15rem;
-  text-align: center;
-}
+
 .numBox{
   position: absolute;
   right: 300px;
-  top: 1400px;
+  top: 2200px;
   transform: translateX(50%);
 }
+.part8{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.part8 .cc{
+  font-size: 25rem;
+}
+.part8 .footer {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 70%;
+  max-width: 1317px;
+  border-top: 0.5px solid rgb(75, 75, 75);
+  border-bottom: 0.5px solid rgb(75, 75, 75);
+}
+.part8 .footer span{
+  display: block;
+}
+.part8 .footer span:nth-child(1){
+  text-align: left;
+  font-size: 25px; 
+}
+.part8 .footer span:nth-child(2){
+  text-align: center;
+  font-size: 15rem; 
+  letter-spacing: -13px;
+  line-height: 1;
+}
+span.box002,
+p.cc{
+  font-family: 'Tinos', serif;
+  white-space: nowrap;
+  font-weight: 100;
+}
+
 </style>

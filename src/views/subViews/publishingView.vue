@@ -199,11 +199,11 @@ export default {
   transition: all .7s;
 }
 .pubWrap section .content .imgBox:hover::before{
-  content: 'go on';
+  content: 'view more';
   color: #fff;
-  font-size: 60px;
+  font-size: 40px;
   font-family: 'Barlow', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -2.5px;
   text-shadow: 0px 0px 5px rgba(0,0,0,1);
   text-align: center;
@@ -211,7 +211,7 @@ export default {
   border-radius: 20px 20px 0 20px;
   display: block;
   width: 200px;
-  height: 70px;
+  height: 60px;
   line-height: 51px;
   position: absolute; 
   left: 50%;
