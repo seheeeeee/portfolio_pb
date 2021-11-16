@@ -1,6 +1,7 @@
 <template>
   <div :class="strClass">
-    <p v-html="arrStrings" class="strBox"></p>
+    <p class="strBox">
+    </p>
   </div>
 </template>
 
@@ -12,43 +13,28 @@ export default {
             strTitle: this.pjtTitle,
             strClass: this.pjtTitle.replace(/ /g, "").replace('.', ""),
             arr: [],
-            arrStrings: '',
         }
     },
     methods: {
         fetchData(){
             let str = this.strTitle.split("");
-            // console.log(this.arr);
-            // let arr = this.arr;
-            for(let i = 0; i < str.length; i++){
-                this.arr.push('<span>'+str[i]+'</span>');
-            }
-            let arrString = this.arr.toString();
-            this.arrStrings = arrString.replaceAll(',', "");
+            let strBox = document.querySelector('p');
+            console.log(strBox);
+
+                for(let i = 0; i < str.length; i++){
+                    let para = document.createElement('span');
+                    let node = document.createTextNode(str[i]);
+                    para.appendChild(node);
+                    strBox.appendChild(para);
+                }
+            
+
         },
         wheelAnimation(){
             let span = document.querySelectorAll('.strBox span');
             console.log(span);
-            // window.__scrollPosition = document.documentElement.scrollTop || 0;
-
-            // document.addEventListener('scroll', function(){
-            //     let e = document.querySelector('.strBox');
-
-            //     // let _documentY = document.documentElement.scrollTop;
-            //     // let _direction = _documentY - window.__scrollPosition >= 0 ? 1 : -1;
-            //     // console.log(_direction); // 콘솔창에 스크롤 방향을 출력
-
-            //     // window.__scrollPosition = _documentY; // Update scrollY
-
-            //     // if(_direction >= 1){
-            //     //     e.classList.add('wheelDownPre');
-            //     // }else if(_direction == -1){
-            //     //     e.classList.remove('wheelDownPre');
-            //     // }
-                
-            // });
+            
             let before = 0;
-            // let e = document.querySelector('.strBox');
 
             window.addEventListener('scroll',()=>{
                 if(before < window.scrollY) {
