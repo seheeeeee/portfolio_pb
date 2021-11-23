@@ -12,36 +12,42 @@ export default {
         return{
             strTitle: this.pjtTitle,
             strClass: this.pjtTitle.replace(/ /g, "").replace('.', ""),
-            arr: [],
         }
     },
     methods: {
         fetchData(){
             let str = this.strTitle.split("");
-            let strBox = document.querySelector('p');
-            console.log(strBox);
+            let strBox = document.querySelectorAll('.strBox');
+            console.log(str);
 
+            for(let j = 0; j < strBox.length; j++){
                 for(let i = 0; i < str.length; i++){
-                    let para = document.createElement('span');
+                    var para = document.createElement('span');
                     let node = document.createTextNode(str[i]);
                     para.appendChild(node);
-                    strBox.appendChild(para);
+                    console.log(para);
+
+                    var paraArr = document.createElement('div');
+                    paraArr.appendChild(para);
                 }
-            
+                strBox[0].appendChild(paraArr);
+            }
 
         },
         wheelAnimation(){
-            let span = document.querySelectorAll('.strBox span');
-            console.log(span);
+            // let span = document.querySelectorAll('.strBox span');
+            // console.log(span);
             
             let before = 0;
 
             window.addEventListener('scroll',()=>{
                 if(before < window.scrollY) {
-                    span.style.transform = 'translateY(-200px)';
+                    // span.style.transform = 'translateY(-200px)';
+                    console.log("scroll down");
                 }
                 else {
-                    span.style.transform = 'translateY(0)';
+                    // span.style.transform = 'translateY(0)';
+                    console.log("scroll up");
                 }
                 before = window.scrollY;
             });
@@ -73,12 +79,10 @@ div{
 /* wheel animation */
 .strBox span{
     display: inline-block;
-    transform: translateY(0);
+    transform: translateY(-300px);
     transition: all 1s;
 }
-.strBox.wheelDownPre span{
-    transform: translateY(-200px);
-}
+
 
 
 </style>
