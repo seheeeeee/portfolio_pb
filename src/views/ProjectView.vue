@@ -18,10 +18,12 @@
           <p class="cc">
             &copy; 2021
           </p>
-          <p class="footer">
-            <span>NEXT</span>
-            <span class="box002">003 CONTACT</span>
-          </p>
+          <router-link to="/contact">
+            <p class="footer">
+              <span>NEXT</span>
+              <span class="box002">003 CONTACT</span>
+            </p>
+          </router-link>
         </div>
   </div>
 </template>
@@ -65,7 +67,7 @@ export default {
 .pjtWrap{
   width: 100%;
   /* height: 100vh; */
-  padding: 300px 0;
+  padding: 300px 0 100px;
   position: relative;
 }
 
@@ -120,6 +122,7 @@ export default {
 .part8 .footer span:nth-child(1){
   text-align: left;
   font-size: 25px; 
+  font-weight: 300;
 }
 .part8 .footer span:nth-child(2){
   text-align: center;

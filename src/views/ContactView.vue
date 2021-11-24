@@ -1,6 +1,9 @@
 <template>
   <div class="contactWrap">
-    <h1 class="title">Contact With Me</h1>
+    <div class="titBox">
+      <span>If there's anything you want to talk about,</span>
+      <h1 class="title">Contact With Me</h1>
+    </div>
     <div class="content">
       <div class="email">
         <p class="circleAni">
@@ -41,35 +44,34 @@
         </p>
         <email-form></email-form>
       </div>
-      <div class="phone">
-        <strong>Phone</strong>
-
-      </div>
       <div class="references">
         <strong>References</strong>
         <ul>
-          <li><i class="fab fa-github"></i>github <a href="https://github.com/seheeeeee/portfolio_pb">link</a></li>
-          <li><i class="fab fa-blogger-b"></i>blog <a href="https://sehee94.tistory.com/">link</a></li>
+          <li><i class="fab fa-github"></i> <a href="https://github.com/seheeeeee/portfolio_pb" target="_blank">github</a></li>
+          <li><i class="fab fa-blogger-b"></i> <a href="https://sehee94.tistory.com/" target="_blank">blog</a></li>
         </ul>
       </div>
     </div>
-    <num-box :pageNum="pageNum"></num-box>
+    <div class="part8">
+          <p class="cc">
+            &copy; 2021
+          </p>
+          <router-link to="/about">
+          <p class="footer">
+            <span>NEXT</span>
+            <span class="box002">001 ABOUT</span>
+          </p>
+          </router-link>
+        </div>
   </div>
 </template>
 
 <script>
-import numBox from '../components/numberBox.vue';
 import emailForm from '../components/EmailForm.vue';
 
 export default {
   components: {
-    numBox,
     emailForm,
-  },
-  data(){
-    return{
-      pageNum: '003',
-    }
   },
   methods: {
     circleAnimation(){
@@ -94,13 +96,19 @@ export default {
 
 .contactWrap{
   width: 100%;
-  padding: 300px 0;
+  padding: 300px 0 100px;
   position: relative;
 }
 .contactWrap h1{
   font-size: 7.5rem;
 }
-
+.titBox span{
+  display: block;
+  transform: translateY(-80px);
+  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+}
 .content{
   width: 100%;
   margin-top: 400px;
@@ -110,6 +118,10 @@ export default {
   max-width: 550px;
   min-width: 300px; */
   width: 50%;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+  color: #1f1f1f;
 }
 .content strong{
   position: relative;
@@ -162,5 +174,55 @@ export default {
   to{
     transform: rotate(360deg);
   }
+}
+.content .references{
+  margin: 50px 0 500px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+.content .references strong{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.content .references ul {
+  margin-top: 30px;
+}
+.part8{
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.part8 .cc{
+  font-size: 25rem;
+}
+.part8 .footer {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 70%;
+  max-width: 1317px;
+  border-top: 0.5px solid rgb(75, 75, 75);
+  border-bottom: 0.5px solid rgb(75, 75, 75);
+}
+.part8 .footer span{
+  display: block;
+}
+.part8 .footer span:nth-child(1){
+  text-align: left;
+  font-weight: 300;
+  font-size: 25px; 
+}
+.part8 .footer span:nth-child(2){
+  text-align: center;
+  font-size: 15rem; 
+  letter-spacing: -13px;
+  line-height: 1;
+}
+span.box002,
+p.cc{
+  font-family: 'Tinos', serif;
+  white-space: nowrap;
+  font-weight: 100;
 }
 </style>

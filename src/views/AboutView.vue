@@ -97,10 +97,12 @@
           <p class="cc">
             &copy; 2021
           </p>
-          <p class="footer">
-            <span>NEXT</span>
-            <span class="box002">002 PROJECT</span>
-          </p>
+          <router-link to="/project">
+            <p class="footer">
+              <span>NEXT</span>
+              <span class="box002">002 PROJECT</span>
+            </p>
+          </router-link>
         </div>
       </div>
   </div>
