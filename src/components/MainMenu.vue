@@ -34,10 +34,24 @@ export default {
         let copyObj = menuItem[i].cloneNode(true);
         menuList.appendChild(copyObj);
       }
-    }
+    },
+    wheelAnimation(){
+      let before = 0;
+      let menuBtn = document.querySelector('.menuBtn');
+      menuBtn.addEventListener('scroll',()=>{
+          if(before < window.scrollY) {
+            console.log("scroll down");
+          }
+          else {
+            console.log("scroll up");
+          }
+          before = window.scrollY;
+      });
+  },
   },
   mounted() {
     this.cloneList();
+    this.wheelAnimation();
   }
 }
 </script>
