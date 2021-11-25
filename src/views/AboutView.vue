@@ -187,6 +187,7 @@ export default {
 <style scoped>
 .aboutWrap{
   /* height: 100vh; */
+  overflow-x: hidden;
   text-align: center;
   padding: 300px 0 200px;
 }

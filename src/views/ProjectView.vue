@@ -68,6 +68,7 @@ export default {
   width: 100%;
   /* height: 100vh; */
   padding: 300px 0 100px;
+  overflow-x: hidden;
   position: relative;
 }
 

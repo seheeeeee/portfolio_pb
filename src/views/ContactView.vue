@@ -98,6 +98,7 @@ export default {
   width: 100%;
   padding: 300px 0 100px;
   position: relative;
+  overflow-x: hidden;
 }
 .contactWrap h1{
   font-size: 7.5rem;
