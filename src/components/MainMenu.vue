@@ -1,13 +1,13 @@
 <template>
-  <div class="mainMenu" v-on:click="toggleMenu">
-      <span>MENU</span> 
+  <div class="mainMenu" :class="{ active : isShow }">
+      <span @click="toggleMenu">MENU</span> 
       <div class="menuBtn">
         <ul>
-          <li><router-link to="/about">ABOUT</router-link></li>
-          <li><router-link to="/project">PROJECT</router-link></li>
-          <li><router-link to="/contact">CONTACT</router-link></li>
+          <li @click="unActive"><span>&#8560;</span><router-link to="/about">ABOUT</router-link></li>
+          <li @click="unActive"><span>&#8561;</span><router-link to="/project">PROJECT</router-link></li>
+          <li @click="unActive"><span>&#8562;</span><router-link to="/contact">CONTACT</router-link></li>
         </ul>
-        <div class="removeBtn">X</div>
+        <div class="removeBtn" @click="unActive">X</div>
       </div>
       
   </div>
@@ -15,12 +15,29 @@
 
 <script>
 export default {
-  methods: {
-    toggleMenu(){
-      document.querySelector('.mainMenu').classList.add('active');
+  data(){
+    return {
+      isShow: false,
     }
   },
-  beforeDestroy(){
+  methods: {
+    toggleMenu(){
+      this.isShow = true;
+    },
+    unActive(){
+      this.isShow = false;
+    },
+    cloneList(){
+     let menuList = document.querySelector('.menuBtn ul');
+     let menuItem = document.querySelectorAll('.menuBtn ul li');
+      for(let i = 0; i < menuItem.length; i++){
+        let copyObj = menuItem[i].cloneNode(true);
+        menuList.appendChild(copyObj);
+      }
+    }
+  },
+  mounted() {
+    this.cloneList();
   }
 }
 </script>
@@ -32,53 +49,53 @@ export default {
   z-index: 999;
 }
 .mainMenu.active .menuBtn{
-  right: -50px;
-  top: -50px;
+  height: 100vh;
+  position: fixed;
+  opacity: 1;
+  z-index: 999;
 }
 .mainMenu .menuBtn{
   background-color: #000;
   width: 100vw;
-  height: 100vh;
+  height: 0;
   position: absolute;
+  /* right: -50px;
+  top: -200vh; */
   right: -50px;
-  top: -200vh;
+  top: -50px;
   padding: 100px 100px;
   overflow: hidden;
-  transition: all .7s;
+  z-index: -1;
+  opacity: 0;
+  transition: all .4s;
 }
 .menuBtn ul{
   position: relative;
   left: 55%;
-
+  overflow-y: scroll;
+  height: 100%;
 }
 .mainMenu ul li {
   margin-bottom: 15px;
   position: relative;
 }
-.mainMenu ul li::before{
+.mainMenu ul li span{
+  font-size: 9px;
   color: #fff;
   display: block;
   position: absolute;
   left: -70px;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   text-align: center;
-  line-height: 30px;
+  line-height: 20px;
   border-radius: 50%;
   border: 0.5px solid transparent;
   transition: all .5s;
 }
-.mainMenu ul li:nth-child(1)::before{
-  content: '\2170';
-}
-.mainMenu ul li:nth-child(2)::before{
-  content: '\2171';
-}
-.mainMenu ul li:nth-child(3)::before{
-  content: '\2172';
-}
-.mainMenu ul li:hover::before{
-  border-color: #fff; 
+
+.mainMenu ul li:hover span{
+  border-color: rgba(255,255,255, 0.6);
 }
 .mainMenu ul li a{
   color: #fff;
