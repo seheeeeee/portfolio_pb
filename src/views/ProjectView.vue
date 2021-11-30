@@ -5,36 +5,36 @@
       <li v-for="project in projects" :key="project.name">
         <router-link :to="{path : project.link}">
           <div class="bgBox">
-            <mouseWheel :pjtTitle="project.name"></mouseWheel>
-            <div class="comment">
+            <mouseWheel :pjtTitle="project.name" v-on:scrollDown="nextListItem()"></mouseWheel>
+            <!-- <div class="comment">
               {{project.comment}}
-            </div>
+            </div> -->
           </div>
         </router-link>
       </li>
     </ul>
-    <num-box :pageNum="pageNum"></num-box>
+    <!-- <num-box :pageNum="pageNum"></num-box>
     <div class="part8">
-          <p class="cc">
-            &copy; 2021
-          </p>
-          <router-link to="/contact">
-            <p class="footer">
-              <span>NEXT</span>
-              <span class="box002">003 CONTACT</span>
-            </p>
-          </router-link>
-        </div>
+      <p class="cc">
+        &copy; 2021
+      </p>
+      <router-link to="/contact">
+        <p class="footer">
+          <span>NEXT</span>
+          <span class="box002">003 CONTACT</span>
+        </p>
+      </router-link>
+    </div> -->
   </div>
 </template>
 
 <script>
-import numBox from '../components/numberBox.vue';
+// import numBox from '../components/numberBox.vue';
 import mouseWheel from '../components/mousewheel.vue';
 
 export default {
   components: {
-    numBox,
+    // numBox,
     mouseWheel,
   },
   data(){
@@ -59,7 +59,11 @@ export default {
       pageNum: '002',
     }
   },
-  
+  methods: {
+    nextListItem(){
+      console.log('event receive');
+    },
+  },
 }
 </script>
 
@@ -67,34 +71,44 @@ export default {
 .pjtWrap{
   width: 100%;
   /* height: 100vh; */
-  padding: 300px 0 100px;
+  /* padding: 300px 0 100px; */
+  padding-top: 300px;
   overflow-x: hidden;
   position: relative;
 }
 
 #pjts{
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
+  border: 1px solid red;
 }
 #pjts li{
-  margin-bottom: 700px;
+  /* margin-bottom: 700px; */
+  scroll-snap-align: start;
+  height: 100vh;
+  border: 2px solid green;
 }
-#pjts li:first-child{
+/* #pjts li:first-child{
   margin-bottom: 1000px;
   margin-top: 600px;
-}
+} */
 .bgBox{
   margin: 0 auto;
   width: 90%;
   /* max-width: 700px; */
-  height: 500px;
+  height: 100%;
   background-color: rgba(0,0,0,0.5);
   transition: all .5s;
 }
 .bgBox:hover{
   background-color: rgba(0,0,0,0.8);
 }
-
+.bgBox > div{
+  height: 100%;
+}
 .numBox{
   position: absolute;
   right: 300px;

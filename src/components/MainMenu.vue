@@ -9,7 +9,6 @@
         </ul>
         <div class="removeBtn" @click="unActive">X</div>
       </div>
-      
   </div>
 </template>
 
@@ -47,7 +46,7 @@ export default {
           }
           before = window.scrollY;
       });
-  },
+    },
   },
   mounted() {
     this.cloneList();
@@ -88,10 +87,12 @@ export default {
   left: 55%;
   overflow-y: scroll;
   height: 100%;
+  scroll-snap-type: y mandatory;
 }
 .mainMenu ul li {
   margin-bottom: 15px;
   position: relative;
+  scroll-snap-align: start;
 }
 .mainMenu ul li span{
   font-size: 9px;
