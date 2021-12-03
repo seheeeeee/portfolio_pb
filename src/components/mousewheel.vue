@@ -13,6 +13,7 @@ export default {
             strTitle: this.pjtTitle,
             strClass: this.pjtTitle.replace(/ /g, "").replace('.', ""),
             nextBox: '',
+            count: 1,
         }
     },
     methods: {
@@ -38,18 +39,29 @@ export default {
 
                 if(before < window.scrollY) {
                     strBoxDiv.classList.add('scrolldown');
-                    console.log("scroll down");
+                    if(this.count < 3){
+                        this.count++;
+                    }else{
+                        this.count = 1;
+                    }
+                    console.log("scroll down,"+ this.count);
                     this.sendDownEvent();
                 }
                 else if(before > window.scrollY){
                     strBoxDiv.classList.remove('scrolldown');
-                    console.log("scroll up");
+                    if(this.count > 1){
+                        this.count--;
+                    }else{
+                        this.count = 3;
+                    }
+                    console.log("scroll up,"+ this.count);
+
                 }
                 before = window.scrollY;
             });
         },
         sendDownEvent(){
-            this.$emit('scrollDown');
+            this.$emit('wheel-down', this.count);
         },
         stylingFn(){
             let strBoxDiv = document.querySelector(`.${this.strClass} .strBox > div`);

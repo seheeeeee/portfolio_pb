@@ -5,7 +5,7 @@
       <li v-for="project in projects" :key="project.name">
         <router-link :to="{path : project.link}">
           <div class="bgBox">
-            <mouseWheel :pjtTitle="project.name" v-on:scrollDown="nextListItem()"></mouseWheel>
+            <mouseWheel :pjtTitle="project.name" @wheel-down="nextListItem"></mouseWheel>
             <!-- <div class="comment">
               {{project.comment}}
             </div> -->
@@ -60,8 +60,16 @@ export default {
     }
   },
   methods: {
-    nextListItem(){
-      console.log('event receive');
+    nextListItem(count){
+      console.log('event receive', count);
+      let pjtList = document.querySelectorAll('#pjts li');
+      if(1< count <= 3){
+        pjtList[count-1].classList.add('prePage');
+        pjtList[count].classList.add('onPage');
+      }else{
+        pjtList[3].classList.add('prePage');
+        pjtList[count].classList.add('onPage');
+      }
     },
   },
 }
@@ -90,6 +98,14 @@ export default {
   scroll-snap-align: start;
   height: 100vh;
   border: 2px solid green;
+  opacity: 1;
+  transition: all .4s;
+}
+#pjts li.onpage{
+  opacity: 1;
+}
+#pjts li.prepage{
+  opacity: 0;
 }
 /* #pjts li:first-child{
   margin-bottom: 1000px;
