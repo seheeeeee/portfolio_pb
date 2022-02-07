@@ -51,9 +51,7 @@
           <li><i class="fab fa-blogger-b"></i> <a href="https://sehee94.tistory.com/" target="_blank">blog</a></li>
         </ul>
       </div>
-      <div class="profileImg">
-        <img :src="require('../img/profile.jpg')" alt="">
-      </div>
+      
     </div>
     <div class="part8">
           <p class="cc">

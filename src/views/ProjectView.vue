@@ -64,13 +64,47 @@ export default {
       console.log('event receive', count);
       let pjtList = document.querySelectorAll('#pjts li');
       if(1< count <= 3){
-        pjtList[count-1].classList.add('prePage');
-        pjtList[count].classList.add('onPage');
-      }else{
-        pjtList[3].classList.add('prePage');
-        pjtList[count].classList.add('onPage');
+        this.downPageMotion(pjtList, count)
+        pjtList[count-1].style.zIndex = '10';
+        pjtList[count-2].style.zIndex = '1';
+      }else if(count == 1){
+        this.downPageOpMotion(pjtList, 1)
+        pjtList[count-1].style.zIndex = '10';
+        pjtList[2].style.zIndex = '1';
+      }
+      // this.resetClass(pjtList);
+    },
+    resetClass(obj){
+      for(let i = 0; i < obj.length; i++){
+        obj[i].className = '';
       }
     },
+    downPageMotion(obj, index){
+      let onItems = obj[index-1].querySelectorAll('span');
+      let preItems = obj[index-2].querySelectorAll('span');
+      
+      for(let i = 0; i < onItems.length; i++){
+        onItems[i].style.transform = 'translateY(0)';
+        onItems[i].style.opacity = '1';
+      }
+      for(let i = 0; i < preItems.length; i++){
+        preItems[i].style.transform = 'translateY(-200%)';
+        // preItems[i].style.opacity = '0';
+      }
+    },
+    downPageOpMotion(obj, index){
+      let onItems = obj[index-1].querySelectorAll('span');
+      let preItems = obj[2].querySelectorAll('span');
+      
+      for(let i = 0; i < onItems.length; i++){
+        onItems[i].style.transform = 'translateY(0)';
+        onItems[i].style.opacity = '1';
+      }
+      for(let i = 0; i < preItems.length; i++){
+        preItems[i].style.transform = 'translateY(-200%)';
+        // preItems[i].style.opacity = '0';
+      }
+    }
   },
 }
 </script>
@@ -89,23 +123,30 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory;
+  /* -ms-scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory; */
   border: 1px solid red;
+  position: relative;
 }
 #pjts li{
   /* margin-bottom: 700px; */
-  scroll-snap-align: start;
+  /* scroll-snap-align: start; */
+  width: 100%;
   height: 100vh;
   border: 2px solid green;
   opacity: 1;
   transition: all .4s;
+  position: absolute;
 }
-#pjts li.onpage{
-  opacity: 1;
+#pjts li:nth-child(1){
+  z-index: 10;
 }
-#pjts li.prepage{
-  opacity: 0;
+#pjts li:nth-child(2){
+  z-index: 1;
+}
+#pjts li:nth-child(3){
+  z-index: 1;
+  
 }
 /* #pjts li:first-child{
   margin-bottom: 1000px;

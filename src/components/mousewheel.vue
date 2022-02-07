@@ -65,10 +65,16 @@ export default {
         },
         stylingFn(){
             let strBoxDiv = document.querySelector(`.${this.strClass} .strBox > div`);
+            let strBoxSpan = document.querySelectorAll(`.${this.strClass} .strBox > div span`);
+            console.log(strBoxSpan);
             strBoxDiv.style.position = 'absolute';
             strBoxDiv.style.top = '50%';
             strBoxDiv.style.transform = 'translateY(-50%)';
-        },
+            for(let i = 0; i < strBoxSpan.length; i++){
+                // strBoxSpan[i].style.opacity = '0';
+                strBoxSpan[i].style.transition = 'all .5s';
+            }
+        },        
     },
     mounted(){
         this.fetchData();

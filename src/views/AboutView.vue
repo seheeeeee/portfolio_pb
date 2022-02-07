@@ -134,7 +134,7 @@ export default {
         let part6 = document.querySelector('.part6');
         let part7 = document.querySelector('.part7');
         let part8 = document.querySelector('.part8');
-        
+        if(part1 != null){
         if(pageYOffset > part1.offsetTop){
             part1.classList.add("show");
         }else{
@@ -174,6 +174,7 @@ export default {
             part8.classList.add("show");
         }else{
             part8.classList.remove("show");
+        }
         }
       })
     },
