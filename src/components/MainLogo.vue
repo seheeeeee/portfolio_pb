@@ -30,7 +30,9 @@ export default {
 
 .mainLogo{
     position: absolute;
-    left: 60px; top: 80px;
+    left: 70px; 
+    top: 80px;
+    z-index: 100;
 }
 .mainlogo_bk, .mainlogo_w{
     display: block;
@@ -38,6 +40,10 @@ export default {
     height: 100%;
     border-radius: 50%;
     transition: all .3s;
+    position: absolute;
+}
+.mainlogo_w{
+    display: none;
 }
 .nightMode .mainLogo{
     background-color: #000;
