@@ -31,7 +31,7 @@ export default {
 }
 
 .waveBlock{
-  position: sticky;
+  position: fixed;
   right: 0; bottom: 0;
   width: 100vw;
   z-index: 1;

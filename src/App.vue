@@ -75,6 +75,4 @@ h1.title {
   display: block;
   clear: both;
 }
-
-
 </style>
