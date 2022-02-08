@@ -12,7 +12,8 @@
       <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
       </g>
       </svg>
-      <div class="waveContent"></div>
+      <div class="waveContent">
+      </div>
     </div>
 </template>
 

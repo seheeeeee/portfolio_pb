@@ -3,7 +3,7 @@ function fetchAbout() {
     const about = {
         title: 'publisher',
         routerLink: '/about',
-        imgURL: ['titleImageExample01.png', 'titleImageExample02.png', 'titleImageExample03.png']
+        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
     }
     return about;
 }
@@ -11,7 +11,7 @@ function fetchProject() {
     const project = {
         title: 'project',
         routerLink: '/project',
-        imgURL: ['titleImageExample01.png', 'titleImageExample02.png', 'titleImageExample03.png']
+        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
     }
     return project;
 }
@@ -19,7 +19,7 @@ function fetchContact() {
     const contact = {
         title: 'contact',
         routerLink: '/contact',
-        imgURL: ['titleImageExample01.png', 'titleImageExample02.png', 'titleImageExample03.png']
+        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
     }
     return contact;
 }
@@ -33,7 +33,7 @@ function Slider(pages){
     // page btn 추가시,
     // pagination = page btn, html에 ul.pagination 추가 필요
     // Slider(pages, pagination) 추가 필요
-    
+
     let slides = [],
         // btns = [],
         count = 0,

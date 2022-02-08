@@ -117,6 +117,9 @@ export default {
     this.autoPaddingTop();
     window.addEventListener('resize', this.autoPaddingTop);
   },
+  destroyed(){
+    window.removeEventListener('resize', this.autoPaddingTop);
+  }
 }
 </script>
 
