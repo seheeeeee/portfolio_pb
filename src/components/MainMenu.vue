@@ -160,6 +160,7 @@ export default {
   font-family: 'Domine', serif;
   font-weight: 500;
   font-size: 1rem;
+  cursor: pointer;
 }
 .mainMenu.active .menuBtn{
   height: 100vh;
@@ -200,7 +201,7 @@ export default {
 }
 .mainMenu ul li:after{
   content: '';
-  display: block;
+  display: inline;
   width: 0;
   height: 2px;
   background: #fff;
@@ -212,15 +213,15 @@ export default {
 }
 .mainMenu ul li:nth-child(1):hover:after,
 .mainMenu ul li:nth-child(4):hover:after{
-  width: 30%;
+  width: 413px;
 }
 .mainMenu ul li:nth-child(2):hover:after,
 .mainMenu ul li:nth-child(5):hover:after{
-  width: 39%;
+  width: 536px;
 }
 .mainMenu ul li:nth-child(3):hover:after,
 .mainMenu ul li:nth-child(6):hover:after{
-  width: 40.5%;
+  width: 558px;
 }
 .mainMenu ul li span{
   font-size: 12px;
@@ -250,9 +251,9 @@ export default {
   color: #fff;
   position: relative; 
   left: 130px;
-  bottom: 180px;
+  bottom: 100px;
   z-index: 99;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'Domine', serif;
   cursor: pointer;
   text-align: left;
