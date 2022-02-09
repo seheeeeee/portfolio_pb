@@ -60,8 +60,10 @@ function Slider(pages){
             animation_state = true;
             setTimeout(() => animation_state = false, 500);
             // btns[current].classList.remove('active');
+            slides[current].classList.remove('on');
             current = index;
             // btns[current].classList.add('active');
+            slides[current].classList.add('on');          
             for(let i = 0; i < count; i++) {
                 slides[i].style.bottom = (current - i) * 100 + '%';
             }

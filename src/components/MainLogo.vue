@@ -24,7 +24,7 @@ export default {
     width: 70px;
     height: 70px;
     border-radius: 100%;
-    background-color: lightcoral;
+    background-color: transparent;
     transition: all 0.3s;
 }
 

@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-      <div class="aboutBox box">
+      <div class="aboutBox box on">
         <router-link :to="fetchedAbout.routerLink" class="sublink">
           <p class="title">{{fetchedAbout.title}}</p>
           <div class="img">
@@ -66,6 +66,32 @@ export default {
         });
       }
     },
+    fetchData(){
+      let strBox = document.querySelectorAll('.title');
+      for(let i = 0; i < strBox.length; i++){
+        let strTitle = strBox[i].innerText;
+        let strTitleRe = strTitle.replace(/ /g, "");
+        let str = strTitleRe.split(""); 
+      
+        var paraArr = document.createElement('div');
+
+        for(let j = 0; j < str.length; j++){
+            var para = document.createElement('span');
+            let node = document.createTextNode(str[j]);
+            para.appendChild(node);
+            paraArr.appendChild(para);
+        }
+        strBox[i].appendChild(paraArr);
+        strBox[i].querySelector('div').style.fontSize = '17rem';
+      }
+    },
+    titleAni(){
+      let span = document.querySelectorAll('.title div span');
+      for(let i = 0; i < span.length; i++){
+        span[i].style.transition = 'all .5s';
+        span[i].style.opacity = '0';
+      }
+    }
   },
   computed: {
     ...mapGetters(['fetchedAbout','fetchedProject','fetchedContact']),
@@ -82,6 +108,8 @@ export default {
     window.addEventListener('resize', this.resizeBoxHeight());
     Slider(wrap);
     this.doMouseOver();
+    this.fetchData();
+    this.titleAni();
   },
   updated(){
     this.resizeBoxHeight();
@@ -117,7 +145,7 @@ export default {
   text-align: center;
   position: absolute; left: 0; top: 50%;
   z-index: 10;
-  font-size: 17rem;
+  font-size: 0;
   font-family: 'Domine', serif;
   color: rgb(243, 58, 58);
   font-weight: 100;
@@ -126,24 +154,38 @@ export default {
   transform: translateY(-50%);
 }
 .img > img{
-  transition: all .5s;
+  transition: all .7s ease-out;
 }
 .img > img:nth-child(1){
-  transform: translate(100%, 0) scale(60%);
+  transform: translate(100%,0) scale(40%);
 }
 .img > img:nth-child(2){
-  transform: scale(80%);
+  transform: scale(40%);
 }
 .img > img:nth-child(3){
-  transform: translate(-100%, 0) scale(80%);
+  transform: translate(-100%,0) scale(120%);
 }
 .img.active > img:nth-child(1){
-  transform: translate(40%) rotate(-25deg) scale(60%);
+
 }
 .img.active > img:nth-child(2){
-  transform: scale(100%);
+
 }
 .img.active > img:nth-child(3){
-  transform: translate(-10%, 30%) rotate(25deg) scale(80%);
+
+}
+.box.on .img > img:nth-child(1){
+  transform: translate(170%, -10%) rotate(25deg) scale(70%);
+}
+.box.on .img > img:nth-child(2){
+  transform: scale(60%) rotate(-25deg) translate(-120%, 0);
+}
+.box.on .img > img:nth-child(3){
+  
+}
+
+.box.on .title div span{
+  opacity: 1;
+  color: #000;
 }
 </style>
