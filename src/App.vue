@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <custom-cursor></custom-cursor>
     <main-logo></main-logo>
     <main-menu></main-menu>
     <transition name="page">
@@ -13,12 +14,14 @@
 import MainLogo from './components/MainLogo.vue';
 import MainMenu from './components/MainMenu.vue';
 import WaveBlock from './components/waveBlock.vue';
+import CustomCursor from './components/CustomCursor.vue';
 
 export default {
   components: {
     MainLogo,
     MainMenu,
     WaveBlock,
+    CustomCursor,
   }
 
 }
@@ -42,6 +45,7 @@ export default {
   position: relative;
   color: #1f1f1f;
   z-index: 0;
+  cursor: none;
 }
 .underBar::after{
   content: '';

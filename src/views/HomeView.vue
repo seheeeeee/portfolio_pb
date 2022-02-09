@@ -65,7 +65,7 @@ export default {
           img[i].classList.remove('active');
         });
       }
-    }
+    },
   },
   computed: {
     ...mapGetters(['fetchedAbout','fetchedProject','fetchedContact']),
@@ -117,6 +117,13 @@ export default {
   text-align: center;
   position: absolute; left: 0; top: 50%;
   z-index: 10;
+  font-size: 17rem;
+  font-family: 'Domine', serif;
+  color: rgb(243, 58, 58);
+  font-weight: 100;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateY(-50%);
 }
 .img > img{
   transition: all .5s;
