@@ -3,7 +3,7 @@ function fetchAbout() {
     const about = {
         title: 'publisher',
         routerLink: '/about',
-        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
+        imgURL: ['home_01_02.jpg', 'home_01_03.jpg', 'home_01_01.jpg']
     }
     return about;
 }
@@ -11,7 +11,7 @@ function fetchProject() {
     const project = {
         title: 'project',
         routerLink: '/project',
-        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
+        imgURL: ['home_02_03.jpg', 'home_02_02.jpg', 'home_02_01.jpg']
     }
     return project;
 }
@@ -19,7 +19,7 @@ function fetchContact() {
     const contact = {
         title: 'contact',
         routerLink: '/contact',
-        imgURL: ['titleImageExample03.png', 'titleImageExample02.png', 'titleImageExample01.png']
+        imgURL: ['home_03_03.jpg', 'home_03_02.jpg', 'home_03_01.jpg']
     }
     return contact;
 }

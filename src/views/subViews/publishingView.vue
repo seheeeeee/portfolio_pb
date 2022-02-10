@@ -1,6 +1,6 @@
 <template>
   <div class="pubWrap">
-    <h1 class="title">Web Publishing</h1>
+    <h1 class="title">Web Sites</h1>
     <section class="semantic">
       <h2>Semantic Web</h2>
       <ul>
@@ -61,13 +61,13 @@ export default {
           name : 'K-WATER',
           link : '/site-kwater',
           pageImgURL: 'kWater1.png',
-          content: 'K-Water. marked up using HTML and CSS and created an automatic banner width JS.'
+          content: 'K-Water. marked up using HTML and CSS and created an automatic banner with JS.'
         },
         {
           name : 'ANSAN CITY',
           link : '/site-ansan',
           pageImgURL: 'ansan1.png',
-          content: 'Ansan-city. marked up using HTML and CSS and created an automatic banner width JS.'
+          content: 'Ansan-city. marked up using HTML and CSS and created an automatic banner with JS.'
         },
       ],
       responsivePages: [
@@ -76,7 +76,7 @@ export default {
           link : '/site-29CM',
           pageImgURL: '29cm1.png',
           mPageImgURL: ['m_29cm1.png', 'm_29cm2.png'],
-          content: '29CM. marked up using HTML and CSS and created an automatic banner width JS. Also, It is designed as a responsive web layout.'
+          content: '29CM. marked up using HTML and CSS and created an automatic banner with JS. Also, It is designed as a responsive web layout.'
         },
       ],
       pageNum: '004',

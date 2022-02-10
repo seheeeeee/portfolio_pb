@@ -55,7 +55,7 @@
     </div>
     <div class="part8">
           <p class="cc">
-            &copy; 2021
+            &copy; 2022
           </p>
           <router-link to="/about">
           <p class="footer">
@@ -197,7 +197,7 @@ export default {
   text-align: center;
 }
 .part8 .cc{
-  font-size: 25rem;
+  font-size: 20rem;
 }
 .part8 .footer {
   margin: 0 auto;
@@ -213,11 +213,11 @@ export default {
 .part8 .footer span:nth-child(1){
   text-align: left;
   font-weight: 300;
-  font-size: 25px; 
+  font-size: 20px; 
 }
 .part8 .footer span:nth-child(2){
   text-align: center;
-  font-size: 15rem; 
+  font-size: 13rem; 
   letter-spacing: -13px;
   line-height: 1;
 }

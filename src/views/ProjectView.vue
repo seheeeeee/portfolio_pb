@@ -14,6 +14,19 @@
           </div>
         </router-link>
       </li>
+      <li>
+        <div class="part8">
+          <p class="cc">
+            &copy; 2022
+          </p>
+          <router-link to="/contact">
+            <p class="footer">
+              <span>NEXT</span>
+              <span class="box002">003 CONTACT</span>
+            </p>
+          </router-link>
+        </div>
+      </li>
     </ul>
   </div>
 </template>
@@ -34,17 +47,17 @@ export default {
         {
           name : 'Web Sites',
           link : '/publishing',
-          comment : 'HTML5, CSS3 를 사용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱했습니다.',
+          comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱했습니다.',
         },
         {
           name : 'JS projects',
           link : '/script',
-          comment: 'vanila JavaScript 를 사용하여 js 미니 프로그램을 만들었습니다.',
+          comment: 'vanila JavaScript 를 이용하여 js 미니 프로그램을 만들었습니다.',
         },
         {
           name : 'Vue.js fw',
           link : '/scheduler',
-          comment: 'Vue.js 프레임워크를 사용하여 스케쥴링 어플리케이션을 만들었습니다.',
+          comment: 'Vue.js 프레임워크를 이용하여 분류별 스택 스케쥴링 페이지를 만들었습니다.',
         },
       ],
       pageNum: '002',
@@ -100,7 +113,7 @@ export default {
       let vh = window.innerHeight;
       let bgBox = document.querySelectorAll('.bgBox');
       for(let i = 0; i < bgBox.length; i++){
-        bgBox[i].style.paddingTop = `${vh*0.45}px`;
+        bgBox[i].style.paddingTop = `${vh*0.40}px`;
       }
     }
   },
@@ -117,7 +130,7 @@ export default {
     this.autoPaddingTop();
     window.addEventListener('resize', this.autoPaddingTop);
   },
-  destroyed(){
+  destroyed(){ 
     window.removeEventListener('resize', this.autoPaddingTop);
   }
 }
@@ -133,13 +146,11 @@ export default {
 #pjts{
   width: 100%;
   height: 100%;
-  border: 1px solid red;
   position: relative;
   overflow: hidden;
 }
 #pjts li{
   width: 100%;
-  border: 2px solid green;
   opacity: 1;
   transition: all .7s;
   position: absolute;
@@ -156,7 +167,49 @@ export default {
   box-sizing: border-box;
 }
 
-.bgBox .content{
-  /* height: 100%; */
+.bgBox .comment{
+  padding-top: 30px;
+  font-family: 'Arial', Helvetica, sans-serif;
+}
+.bgBox .title{
+  font-family: 'Domine', serif;
+  font-size: 15em;
+}
+.part8{
+  padding-top: 100px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.part8 .cc{
+  font-size: 20rem;
+}
+.part8 .footer {
+  margin: 0 auto;
+  padding: 50px 0;
+  width: 70%;
+  max-width: 1317px;
+  border-top: 0.5px solid rgb(75, 75, 75);
+  border-bottom: 0.5px solid rgb(75, 75, 75);
+}
+.part8 .footer span{
+  display: block;
+}
+.part8 .footer span:nth-child(1){
+  text-align: left;
+  font-weight: 300;
+  font-size: 25px; 
+}
+.part8 .footer span:nth-child(2){
+  text-align: center;
+  font-size: 13rem; 
+  letter-spacing: -13px;
+  line-height: 1;
+}
+span.box002,
+p.cc{
+  font-family: 'Tinos', serif;
+  white-space: nowrap;
+  font-weight: 100;
 }
 </style>

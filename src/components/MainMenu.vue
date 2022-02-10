@@ -221,7 +221,7 @@ export default {
 }
 .mainMenu ul li:nth-child(3):hover:after,
 .mainMenu ul li:nth-child(6):hover:after{
-  width: 55px;
+  width: 559px;
 }
 .mainMenu ul li span{
   font-size: 12px;
