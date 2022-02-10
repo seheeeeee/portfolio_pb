@@ -85,11 +85,37 @@ export default {
         strBox[i].querySelector('div').style.fontSize = '17rem';
       }
     },
-    titleAni(){
+    initTitle(){
       let span = document.querySelectorAll('.title div span');
       for(let i = 0; i < span.length; i++){
         span[i].style.transition = 'all .5s';
         span[i].style.opacity = '0';
+      }
+    },
+    onTitle(){
+      // console.log('go');
+      // let onbox = document.querySelector('.on .title div');
+      // let onspan = onbox.childNodes;
+      // for(let j = 0; j < onspan.length; j++){
+      //   onspan[j].style.opacity = '1';
+      // }
+      // onbox = '';
+      // console.log(onbox);
+      let boxes = document.querySelectorAll('.box');
+
+      for(let c = 0; c < boxes.length; c++){
+        if(boxes[c].classList.contains('on')){
+          let activeBox = boxes[c];
+          let activeSpan = activeBox.querySelectorAll('.title span');
+          console.log(activeSpan);
+          for(let j = 0; j < activeSpan.length; j++){
+            activeSpan[j].style.opacity = '1';
+          }
+          activeBox = [];
+          activeSpan = [];
+          console.log(activeBox, activeSpan);
+          break;
+        }
       }
     }
   },
@@ -107,9 +133,10 @@ export default {
     this.resizeBoxHeight();
     window.addEventListener('resize', this.resizeBoxHeight());
     Slider(wrap);
-    this.doMouseOver();
+    // this.doMouseOver();
     this.fetchData();
-    this.titleAni();
+    // this.initTitle();
+    window.addEventListener('wheel', this.onTitle());
   },
   updated(){
     this.resizeBoxHeight();
@@ -155,6 +182,9 @@ export default {
 }
 .img > img{
   transition: all .7s ease-out;
+  width: 400px;
+  height: 600px;
+  -webkit-filter: grayscale(70%);
 }
 .img > img:nth-child(1){
   transform: translate(100%,0) scale(40%);
@@ -183,7 +213,12 @@ export default {
 .box.on .img > img:nth-child(3){
   
 }
-
+.box.on:hover .img > img:nth-child(1){
+  transform: translate(165%, -10%) rotate(23deg) scale(70%);
+}
+.box.on:hover .img > img:nth-child(2){
+  transform: scale(60%) rotate(-22deg) translate(-115%, 0);
+}
 .box.on .title div span{
   opacity: 1;
   color: #000;
