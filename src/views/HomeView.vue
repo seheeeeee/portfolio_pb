@@ -2,7 +2,18 @@
   <div class="wrap">
       <div class="aboutBox box on">
         <router-link :to="fetchedAbout.routerLink" class="sublink">
-          <p class="title">{{fetchedAbout.title}}</p>
+          <!-- <p class="title">{{fetchedAbout.title}}</p> -->
+          <p class="title2">
+            <span>p</span>
+            <span>u</span>
+            <span>b</span>
+            <span>l</span>
+            <span>i</span>
+            <span>s</span>
+            <span>h</span>
+            <span>e</span>
+            <span>r</span>
+          </p>
           <div class="img">
             <img :src="require(`../img/${fetchedAbout.imgURL[0]}`)" alt="">
             <img :src="require(`../img/${fetchedAbout.imgURL[1]}`)" alt="">
@@ -12,7 +23,17 @@
       </div>
       <div class="projectBox box">
         <router-link :to="fetchedProject.routerLink" class="sublink">
-          <p class="title">{{fetchedProject.title}}</p>
+          <!-- <p class="title">{{fetchedProject.title}}</p> -->
+          <p class="title2">
+            <span>p</span>
+            <span>r</span>
+            <span>o</span>
+            <span>j</span>
+            <span>e</span>
+            <span>c</span>
+            <span>t</span>
+            <span>s</span>
+          </p>
           <div class="img">
             <img :src="require(`../img/${fetchedProject.imgURL[0]}`)" alt="">
             <img :src="require(`../img/${fetchedProject.imgURL[1]}`)" alt="">
@@ -22,7 +43,16 @@
       </div>
       <div class="contactBox box">
         <router-link :to="fetchedContact.routerLink" class="sublink">
-          <p class="title">{{fetchedContact.title}}</p>
+          <!-- <p class="title">{{fetchedContact.title}}</p> -->
+          <p class="title2">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+          </p>
           <div class="img">
             <img :src="require(`../img/${fetchedContact.imgURL[0]}`)" alt="">
             <img :src="require(`../img/${fetchedContact.imgURL[1]}`)" alt="">
@@ -93,20 +123,12 @@ export default {
       }
     },
     onTitle(){
-      // console.log('go');
-      // let onbox = document.querySelector('.on .title div');
-      // let onspan = onbox.childNodes;
-      // for(let j = 0; j < onspan.length; j++){
-      //   onspan[j].style.opacity = '1';
-      // }
-      // onbox = '';
-      // console.log(onbox);
       let boxes = document.querySelectorAll('.box');
 
       for(let c = 0; c < boxes.length; c++){
         if(boxes[c].classList.contains('on')){
           let activeBox = boxes[c];
-          let activeSpan = activeBox.querySelectorAll('.title span');
+          let activeSpan = activeBox.querySelectorAll('.title2 span');
           console.log(activeSpan);
           for(let j = 0; j < activeSpan.length; j++){
             activeSpan[j].style.opacity = '1';
@@ -134,9 +156,9 @@ export default {
     window.addEventListener('resize', this.resizeBoxHeight());
     Slider(wrap);
     // this.doMouseOver();
-    this.fetchData();
+    // this.fetchData();
     // this.initTitle();
-    window.addEventListener('wheel', this.onTitle());
+    // window.addEventListener('wheel', this.onTitle());
   },
   updated(){
     this.resizeBoxHeight();
@@ -219,8 +241,59 @@ export default {
 .box.on:hover .img > img:nth-child(2){
   transform: scale(60%) rotate(-22deg) translate(-115%, 0);
 }
-.box.on .title div span{
+
+.box .title2{
+  width: 100%;
+  /* height: 1px; */
+  text-align: center;
+  position: absolute; left: 0; top: 50%;
+  z-index: 10;
+  font-family: 'Domine', serif;
+  color: rgb(243, 58, 58);
+  font-weight: 100;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+.box .title2 span{
+  font-size: 17rem;
+  text-transform: uppercase;
+  color: rgb(243, 58, 58);
+  opacity: 0;
+  position: relative;
+  top: 250px;
+  transition: all .7s .7s;
+}
+.box .title2 span:nth-child(1){
+  transition-delay: .7s;
+}
+.box .title2 span:nth-child(2){
+  transition-delay: .75s;
+}
+.box .title2 span:nth-child(3){
+  transition-delay: .8s;
+}
+.box .title2 span:nth-child(4){
+  transition-delay: .85s;
+}
+.box .title2 span:nth-child(5){
+  transition-delay: .9s;
+}
+.box .title2 span:nth-child(6){
+  transition-delay: .95s;
+}
+.box .title2 span:nth-child(7){
+  transition-delay: 1.0s;
+}
+.box .title2 span:nth-child(8){
+  transition-delay: 1.05s;
+}
+.box .title2 span:nth-child(9){
+  transition-delay: 1.1s;
+}
+.box.on .title2 span{
   opacity: 1;
-  color: #000;
+  top: 0;
 }
 </style>
