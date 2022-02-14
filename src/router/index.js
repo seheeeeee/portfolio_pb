@@ -16,14 +16,14 @@ export const router = new VueRouter({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/portfolio_pb',
       redirect: '/home',
     },
-    {
-        // path: url 이름(주소)
-        path: '/home',
-        // component: url 주소로 갔을 때 표시될 컴포넌트
-        component: HomeView,
+   {
+      // path: url 이름(주소)
+      path: '/home',
+      // component: url 주소로 갔을 때 표시될 컴포넌트
+      component: HomeView,
     },
     {
       path: '/about',

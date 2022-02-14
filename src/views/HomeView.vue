@@ -85,61 +85,61 @@ export default {
         box.style.height = (window.innerHeight) + 'px';
       }
     },
-    doMouseOver(){
-      const img = document.querySelectorAll('.img');
-      for(let i = 0; i < img.length; i++){
-        img[i].addEventListener('mouseover', ()=> {
-          img[i].className += ' active';
-        });
-        img[i].addEventListener('mouseleave', ()=> {
-          img[i].classList.remove('active');
-        });
-      }
-    },
-    fetchData(){
-      let strBox = document.querySelectorAll('.title');
-      for(let i = 0; i < strBox.length; i++){
-        let strTitle = strBox[i].innerText;
-        let strTitleRe = strTitle.replace(/ /g, "");
-        let str = strTitleRe.split(""); 
+    // doMouseOver(){
+    //   const img = document.querySelectorAll('.img');
+    //   for(let i = 0; i < img.length; i++){
+    //     img[i].addEventListener('mouseover', ()=> {
+    //       img[i].className += ' active';
+    //     });
+    //     img[i].addEventListener('mouseleave', ()=> {
+    //       img[i].classList.remove('active');
+    //     });
+    //   }
+    // },
+    // fetchData(){
+    //   let strBox = document.querySelectorAll('.title');
+    //   for(let i = 0; i < strBox.length; i++){
+    //     let strTitle = strBox[i].innerText;
+    //     let strTitleRe = strTitle.replace(/ /g, "");
+    //     let str = strTitleRe.split(""); 
       
-        var paraArr = document.createElement('div');
+    //     var paraArr = document.createElement('div');
 
-        for(let j = 0; j < str.length; j++){
-            var para = document.createElement('span');
-            let node = document.createTextNode(str[j]);
-            para.appendChild(node);
-            paraArr.appendChild(para);
-        }
-        strBox[i].appendChild(paraArr);
-        strBox[i].querySelector('div').style.fontSize = '17rem';
-      }
-    },
-    initTitle(){
-      let span = document.querySelectorAll('.title div span');
-      for(let i = 0; i < span.length; i++){
-        span[i].style.transition = 'all .5s';
-        span[i].style.opacity = '0';
-      }
-    },
-    onTitle(){
-      let boxes = document.querySelectorAll('.box');
+    //     for(let j = 0; j < str.length; j++){
+    //         var para = document.createElement('span');
+    //         let node = document.createTextNode(str[j]);
+    //         para.appendChild(node);
+    //         paraArr.appendChild(para);
+    //     }
+    //     strBox[i].appendChild(paraArr);
+    //     strBox[i].querySelector('div').style.fontSize = '17rem';
+    //   }
+    // },
+    // initTitle(){
+    //   let span = document.querySelectorAll('.title div span');
+    //   for(let i = 0; i < span.length; i++){
+    //     span[i].style.transition = 'all .5s';
+    //     span[i].style.opacity = '0';
+    //   }
+    // },
+    // onTitle(){
+    //   let boxes = document.querySelectorAll('.box');
 
-      for(let c = 0; c < boxes.length; c++){
-        if(boxes[c].classList.contains('on')){
-          let activeBox = boxes[c];
-          let activeSpan = activeBox.querySelectorAll('.title2 span');
-          console.log(activeSpan);
-          for(let j = 0; j < activeSpan.length; j++){
-            activeSpan[j].style.opacity = '1';
-          }
-          activeBox = [];
-          activeSpan = [];
-          console.log(activeBox, activeSpan);
-          break;
-        }
-      }
-    }
+    //   for(let c = 0; c < boxes.length; c++){
+    //     if(boxes[c].classList.contains('on')){
+    //       let activeBox = boxes[c];
+    //       let activeSpan = activeBox.querySelectorAll('.title2 span');
+    //       console.log(activeSpan);
+    //       for(let j = 0; j < activeSpan.length; j++){
+    //         activeSpan[j].style.opacity = '1';
+    //       }
+    //       activeBox = [];
+    //       activeSpan = [];
+    //       console.log(activeBox, activeSpan);
+    //       break;
+    //     }
+    //   }
+    // }
   },
   computed: {
     ...mapGetters(['fetchedAbout','fetchedProject','fetchedContact']),
@@ -161,7 +161,7 @@ export default {
     // window.addEventListener('wheel', this.onTitle());
   },
   updated(){
-    this.resizeBoxHeight();
+    // this.resizeBoxHeight();
   },
 }
 </script>
@@ -224,15 +224,6 @@ export default {
 }
 .img > img:nth-child(3){
   transform: translate(-100%,0) scale(120%);
-}
-.img.active > img:nth-child(1){
-
-}
-.img.active > img:nth-child(2){
-
-}
-.img.active > img:nth-child(3){
-
 }
 .box.on .img > img:nth-child(1){
   transform: translate(170%, -10%) rotate(25deg) scale(70%);

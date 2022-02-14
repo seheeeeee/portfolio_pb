@@ -228,7 +228,7 @@ export default {
 .content div:nth-child(10){width: 100%; margin-top: 500px;}
 
 .content .image{
-  margin-left: 200px;
+  margin-left: 430px;
   height: 620px;
   background: url('../img/aboutImg1.jpg');
   background-size: cover;

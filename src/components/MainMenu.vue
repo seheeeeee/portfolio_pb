@@ -159,7 +159,7 @@ export default {
 .mainMenu > span{
   font-family: 'Domine', serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .mainMenu.active .menuBtn{
@@ -251,9 +251,9 @@ export default {
   color: #fff;
   position: relative; 
   left: 130px;
-  bottom: 100px;
+  bottom: -120px;
   z-index: 99;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: 'Domine', serif;
   cursor: pointer;
   text-align: left;

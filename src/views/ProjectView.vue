@@ -47,17 +47,17 @@ export default {
         {
           name : 'Web Sites',
           link : '/publishing',
-          comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱했습니다.',
+          comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱하였습니다.',
         },
         {
           name : 'Vue.js instagram',
           link : '/instagram',
-          comment: 'Vue.js 프레임워크를 이용하여 instagram-clone application을 만들었습니다.',
+          comment: 'Vue.js(Vue-cli3)를 이용하여 instagram-clone application을 구성하였습니다.',
         },
         {
           name : 'Vue.js schedule',
           link : '/scheduler',
-          comment: 'Vue.js 프레임워크를 이용하여 schedule application을 만들었습니다.',
+          comment: 'Vue.js(Vue-cli3)를 이용하여 schedule application을 구성하였습니다.',
         },
       ],
       pageNum: '002',
@@ -113,7 +113,7 @@ export default {
       let vh = window.innerHeight;
       let bgBox = document.querySelectorAll('.bgBox');
       for(let i = 0; i < bgBox.length; i++){
-        bgBox[i].style.paddingTop = `${vh*0.40}px`;
+        bgBox[i].style.paddingTop = `${vh*0.4}px`;
       }
     },
     resizeBoxHeight(){
@@ -179,14 +179,16 @@ export default {
 
 .bgBox .comment{
   padding-top: 30px;
-  font-family: 'Arial', Helvetica, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 .bgBox .title{
   font-family: 'Domine', serif;
   font-size: 15em;
 }
 .part8{
-  padding-top: 220px;
+  padding-top: 400px;
   position: relative;
   width: 100%;
   text-align: center;
@@ -222,4 +224,5 @@ p.cc{
   white-space: nowrap;
   font-weight: 100;
 }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <form ref="form" @submit.prevent="sendEmail">
+  <form ref="form" @submit.prevent="sendEmail" autocomplete="off">
     <label>Name</label>
     <input type="text" name="user_name" placeholder="ex) Good Company" class="fromName">
     <label>Email</label>
