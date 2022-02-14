@@ -5,7 +5,7 @@ import AboutView from '../views/AboutView.vue';
 import ProjectView from '../views/ProjectView.vue';
 import ContactView from '../views/ContactView.vue';
 import publishingView from '../views/subViews/publishingView.vue';
-import scriptView from '../views/subViews/scriptView.vue';
+// import scriptView from '../views/subViews/scriptView.vue';
 import fwView from '../views/subViews/fwView.vue';
 
 
@@ -42,8 +42,8 @@ export const router = new VueRouter({
       component: publishingView,
     },
     {
-      path: '/script',
-      component: scriptView,
+      path: '/instagram',
+      beforeEnter() {location.href = 'https://seheeeeee.github.io/instagram/'}
     },
     {
       path: '/fw',

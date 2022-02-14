@@ -202,6 +202,14 @@ export default {
   white-space: nowrap;
   transform: translateY(-50%);
 }
+.img{
+  min-width: 700px;
+  /* position: absolute;
+  left: 50%;
+  top: 50%; */
+  /* transform: translate(-50%, -50%); */
+  white-space: nowrap;
+}
 .img > img{
   transition: all .7s ease-out;
   width: 400px;

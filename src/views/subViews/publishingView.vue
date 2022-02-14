@@ -61,13 +61,13 @@ export default {
           name : 'K-WATER',
           link : '/site-kwater',
           pageImgURL: 'kWater1.png',
-          content: 'K-Water. marked up using HTML and CSS and created an automatic banner with JS.'
+          content: 'K-Water. marked up using HTML and CSS.'
         },
         {
           name : 'ANSAN CITY',
           link : '/site-ansan',
           pageImgURL: 'ansan1.png',
-          content: 'Ansan-city. marked up using HTML and CSS and created an automatic banner with JS.'
+          content: 'Ansan-city. marked up using HTML and CSS.'
         },
       ],
       responsivePages: [
@@ -202,12 +202,10 @@ export default {
   content: 'view more';
   color: #fff;
   font-size: 40px;
-  font-family: 'Barlow', sans-serif;
   font-weight: 500;
   letter-spacing: -2.5px;
   text-shadow: 0px 0px 5px rgba(0,0,0,1);
   text-align: center;
-  background: url('../../img/diagonal.png');
   border-radius: 20px 20px 0 20px;
   display: block;
   width: 200px;

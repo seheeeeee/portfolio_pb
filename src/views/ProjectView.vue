@@ -50,14 +50,14 @@ export default {
           comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱했습니다.',
         },
         {
-          name : 'JS projects',
-          link : '/script',
-          comment: 'vanila JavaScript 를 이용하여 js 미니 프로그램을 만들었습니다.',
+          name : 'Vue.js instagram',
+          link : '/instagram',
+          comment: 'Vue.js 프레임워크를 이용하여 instagram-clone application을 만들었습니다.',
         },
         {
-          name : 'Vue.js fw',
+          name : 'Vue.js schedule',
           link : '/scheduler',
-          comment: 'Vue.js 프레임워크를 이용하여 분류별 스택 스케쥴링 페이지를 만들었습니다.',
+          comment: 'Vue.js 프레임워크를 이용하여 schedule application을 만들었습니다.',
         },
       ],
       pageNum: '002',
@@ -115,7 +115,14 @@ export default {
       for(let i = 0; i < bgBox.length; i++){
         bgBox[i].style.paddingTop = `${vh*0.40}px`;
       }
-    }
+    },
+    resizeBoxHeight(){
+      var boxes = document.querySelectorAll('#pjts li');
+      for (var i = 0; i < boxes.length; i++){
+        var box = boxes[i];
+        box.style.height = (window.innerHeight) + 'px';
+      }
+    },
   },
   mounted(){
     let wrap = document.querySelector('.pjtWrap');
@@ -129,6 +136,7 @@ export default {
     Slider(pjts);
     this.autoPaddingTop();
     window.addEventListener('resize', this.autoPaddingTop);
+    window.addEventListener('resize', this.resizeBoxHeight());
   },
   destroyed(){ 
     window.removeEventListener('resize', this.autoPaddingTop);
@@ -142,7 +150,9 @@ export default {
   overflow: hidden;
   position: relative;
 }
-
+.title{
+  word-break: keep-all;
+}
 #pjts{
   width: 100%;
   height: 100%;
@@ -176,7 +186,7 @@ export default {
   font-size: 15em;
 }
 .part8{
-  padding-top: 100px;
+  padding-top: 220px;
   position: relative;
   width: 100%;
   text-align: center;

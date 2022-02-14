@@ -1,6 +1,6 @@
 <template>
   <div class="scriptWrap">
-      script
+    <h1 class="title">JS Projects</h1>
   </div>
 </template>
 
@@ -13,6 +13,8 @@ export default {
 <style scoped>
 .scriptWrap{
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  padding: 300px 0 200px;
+
 }
 </style>
