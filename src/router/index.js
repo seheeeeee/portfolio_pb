@@ -20,7 +20,7 @@ export const router = new VueRouter({
       redirect: '/home',
     },
     {
-      path: '/:pathMatch(.*)*',
+      path: '*',
       redirect: "/home",
     },
     {
