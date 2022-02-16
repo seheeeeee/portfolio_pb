@@ -65,7 +65,7 @@ export default {
         },
         {
           name : 'ANSAN CITY',
-          link : '/site-ansan',
+          link : '/site-ansancity',
           pageImgURL: 'ansan1.png',
           content: 'Ansan-city. marked up using HTML and CSS.'
         },
@@ -73,7 +73,7 @@ export default {
       responsivePages: [
         {
           name : '29CM',
-          link : '/site-29CM',
+          link : '/site-29cm',
           pageImgURL: '29cm1.png',
           mPageImgURL: ['m_29cm1.png', 'm_29cm2.png'],
           content: '29CM. marked up using HTML and CSS and created an automatic banner with JS. Also, It is designed as a responsive web layout.'
