@@ -19,7 +19,11 @@ export const router = new VueRouter({
       path: '/portfolio_pb',
       redirect: '/home',
     },
-   {
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: "/home",
+    },
+    {
       // path: url 이름(주소)
       path: '/home',
       // component: url 주소로 갔을 때 표시될 컴포넌트
