@@ -7,7 +7,6 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "start": "webpack-dev-server --inline --content-base . --history-api-fallback",
   "dependencies": {
     "core-js": "^3.6.5",
     "emailjs-com": "^3.2.0",
