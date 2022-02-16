@@ -21,6 +21,10 @@ export const router = new VueRouter({
     },
     {
       path: '/:pathMatch(.*)*',
+      redirect: '/404'
+    },
+    {
+      path: '/404',
       beforeEnter() {location.href = 'https://seheeeeee.github.io/portfolio_pb/'}
     },
     {
