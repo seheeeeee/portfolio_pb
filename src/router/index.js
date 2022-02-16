@@ -25,7 +25,7 @@ export const router = new VueRouter({
     },
     {
       path: '/404',
-      beforeEnter() {location.href = 'https://seheeeeee.github.io/portfolio_pb/'}
+      component: HomeView,
     },
     {
       // path: url 이름(주소)
