@@ -20,8 +20,8 @@ export const router = new VueRouter({
       redirect: '/home',
     },
     {
-      path: '*',
-      redirect: "/home",
+      path: '/:pathMatch(.*)*',
+      beforeEnter() {location.href = 'https://seheeeeee.github.io/portfolio_pb/'}
     },
     {
       // path: url 이름(주소)
