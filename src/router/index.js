@@ -20,14 +20,6 @@ export const router = new VueRouter({
       redirect: '/home',
     },
     {
-      path: '/:pathMatch(.*)*',
-      redirect: '/404'
-    },
-    {
-      path: '/404',
-      component: HomeView,
-    },
-    {
       // path: url 이름(주소)
       path: '/home',
       // component: url 주소로 갔을 때 표시될 컴포넌트
