@@ -6,21 +6,21 @@
     <transition name="page">
       <router-view></router-view>
     </transition>
-    <!-- <wave-block></wave-block> -->
+    <wave-block></wave-block>
   </div>
 </template>
 
 <script>
 import MainLogo from './components/MainLogo.vue';
 import MainMenu from './components/MainMenu.vue';
-// import WaveBlock from './components/waveBlock.vue';
+import WaveBlock from './components/waveBlock.vue';
 import CustomCursor from './components/CustomCursor.vue';
 
 export default {
   components: {
     MainLogo,
     MainMenu,
-    // WaveBlock,
+    WaveBlock,
     CustomCursor,
   }
 
