@@ -153,7 +153,7 @@ export default {
   position: fixed;
   right: 70px; 
   bottom: 50px;
-  z-index: 999;
+  z-index: 990;
   text-align: right;
 }
 .mainMenu > span{

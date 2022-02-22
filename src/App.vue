@@ -1,29 +1,52 @@
 <template>
   <div id="app">
     <custom-cursor></custom-cursor>
+    <main-load :isLoading="LoadingStatus"></main-load>
     <main-logo></main-logo>
     <main-menu></main-menu>
     <transition name="page">
       <router-view></router-view>
     </transition>
-    <wave-block></wave-block>
+    <!-- <wave-block></wave-block> -->
   </div>
 </template>
 
 <script>
 import MainLogo from './components/MainLogo.vue';
 import MainMenu from './components/MainMenu.vue';
-import WaveBlock from './components/waveBlock.vue';
+// import WaveBlock from './components/waveBlock.vue';
 import CustomCursor from './components/CustomCursor.vue';
+import MainLoad from './components/MainLoad.vue';
 
 export default {
   components: {
     MainLogo,
     MainMenu,
-    WaveBlock,
+    // WaveBlock,
     CustomCursor,
-  }
-
+    MainLoad,
+  },
+  data(){
+    return{
+      LoadingStatus: false,
+    }
+  },
+  methods: {
+    startLoading(){
+      this.LoadingStatus = true;
+    },
+    endLoading(){
+      setTimeout(()=>{
+        this.LoadingStatus = false;
+      },8000)
+    }
+  },
+  created(){
+    this.startLoading();
+  },
+  mounted(){
+    this.endLoading();
+},
 }
 </script>
 
@@ -47,15 +70,6 @@ export default {
   color: #1f1f1f;
   z-index: 0;
   cursor: none;
-}
-.underBar::after{
-  content: '';
-  width: 30%;
-  height: 2px;
-  background-color: lightcoral;
-  position: absolute;
-  left: 50%; bottom: -18px;
-  transform: translateX(-50%);
 }
 /* Router Transition */
 .page-enter-active, .page-leave-active {
