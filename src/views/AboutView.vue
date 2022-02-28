@@ -106,15 +106,18 @@
           </router-link>
         </div>
       </div>
+      <top-btn></top-btn>
   </div>
 </template>
 
 <script>
 import numBox from '../components/numberBox.vue';
+import topBtn from '../components/TopButton.vue';
 
 export default {
   components: {
     numBox,
+    topBtn
   },
   data(){
     return{
