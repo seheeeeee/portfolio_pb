@@ -80,7 +80,7 @@ export default {
         },
         {
           name : 'LotteHotelShop',
-          link : '/LotteHotelShop',
+          link : '/site-LotteHotelShop',
           pageImgURL: 'LotteHotelShop1.png',
           mPageImgURL: ['m_LotteHotelShop1.png', 'm_LotteHotelShop2.png'],
           content: 'LOTTE HOTEL e-SHOP. marked up using HTML and SCSS and created an automatic banner with JS. Also, It is designed as a responsive web layout.'

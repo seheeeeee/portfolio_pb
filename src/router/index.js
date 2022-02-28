@@ -66,7 +66,7 @@ export const router = new VueRouter({
       beforeEnter() {location.href = 'https://seheeeeee.github.io/site-29cm/'}
     },
     {
-      path: '/LotteHotelShop',
+      path: '/site-LotteHotelShop',
       beforeEnter() {location.href = 'https://seheeeeee.github.io/site-LotteHotelShop/'}
     },
   ],
