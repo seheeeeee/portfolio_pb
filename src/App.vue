@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <custom-cursor></custom-cursor>
-    <main-load :isLoading="LoadingStatus"></main-load>
     <main-logo></main-logo>
     <main-menu></main-menu>
     <transition name="page">
@@ -16,7 +15,6 @@ import MainLogo from './components/MainLogo.vue';
 import MainMenu from './components/MainMenu.vue';
 // import WaveBlock from './components/waveBlock.vue';
 import CustomCursor from './components/CustomCursor.vue';
-import MainLoad from './components/MainLoad.vue';
 
 export default {
   components: {
@@ -24,29 +22,8 @@ export default {
     MainMenu,
     // WaveBlock,
     CustomCursor,
-    MainLoad,
+    // MainLoad,
   },
-  data(){
-    return{
-      LoadingStatus: false,
-    }
-  },
-  methods: {
-    startLoading(){
-      this.LoadingStatus = true;
-    },
-    endLoading(){
-      setTimeout(()=>{
-        this.LoadingStatus = false;
-      },8000)
-    }
-  },
-  created(){
-    this.startLoading();
-  },
-  mounted(){
-    this.endLoading();
-},
 }
 </script>
 

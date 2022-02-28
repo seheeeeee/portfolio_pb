@@ -81,6 +81,7 @@
             <li>Vue.js</li>
             <li>HTML5</li>
             <li>CSS3</li>
+            <li>SCSS</li>
             <li>Photoshop</li>
             <li>Illustration</li>
           </ul>

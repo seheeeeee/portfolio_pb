@@ -1,8 +1,8 @@
 // vue.config.js
 module.exports = {
-    publicPath: '/portfolio_pb',
     outputDir: './docs',
-    devServer: {
+    publicPath: '/portfolio_pb',
+    devServer:{
         historyApiFallback: true,
-    },
+    }
 }

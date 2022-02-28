@@ -1,4 +1,6 @@
 <template>
+<div>
+  <main-load :isLoading="LoadingStatus"></main-load>
   <div class="wrap">
       <div class="aboutBox box on">
         <router-link :to="fetchedAbout.routerLink" class="sublink">
@@ -61,20 +63,27 @@
         </router-link>
       </div>
   </div>
+</div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
-import { pageHeight, Slider } from '../api/index'
+import { pageHeight, Slider } from '../api/index';
+import MainLoad from '../components/MainLoad.vue';
 
 
 export default {
+  components: {
+    MainLoad,
+  },
   data() {
     return {
       inMove: false,
       activeSection: 0,
       offsets: [],
       touchStartY: 0,
+      count: '',
+      LoadingStatus: false,
     }
   },
   methods: {
@@ -85,61 +94,36 @@ export default {
         box.style.height = (window.innerHeight) + 'px';
       }
     },
-    // doMouseOver(){
-    //   const img = document.querySelectorAll('.img');
-    //   for(let i = 0; i < img.length; i++){
-    //     img[i].addEventListener('mouseover', ()=> {
-    //       img[i].className += ' active';
-    //     });
-    //     img[i].addEventListener('mouseleave', ()=> {
-    //       img[i].classList.remove('active');
-    //     });
-    //   }
-    // },
-    // fetchData(){
-    //   let strBox = document.querySelectorAll('.title');
-    //   for(let i = 0; i < strBox.length; i++){
-    //     let strTitle = strBox[i].innerText;
-    //     let strTitleRe = strTitle.replace(/ /g, "");
-    //     let str = strTitleRe.split(""); 
-      
-    //     var paraArr = document.createElement('div');
-
-    //     for(let j = 0; j < str.length; j++){
-    //         var para = document.createElement('span');
-    //         let node = document.createTextNode(str[j]);
-    //         para.appendChild(node);
-    //         paraArr.appendChild(para);
-    //     }
-    //     strBox[i].appendChild(paraArr);
-    //     strBox[i].querySelector('div').style.fontSize = '17rem';
-    //   }
-    // },
-    // initTitle(){
-    //   let span = document.querySelectorAll('.title div span');
-    //   for(let i = 0; i < span.length; i++){
-    //     span[i].style.transition = 'all .5s';
-    //     span[i].style.opacity = '0';
-    //   }
-    // },
-    // onTitle(){
-    //   let boxes = document.querySelectorAll('.box');
-
-    //   for(let c = 0; c < boxes.length; c++){
-    //     if(boxes[c].classList.contains('on')){
-    //       let activeBox = boxes[c];
-    //       let activeSpan = activeBox.querySelectorAll('.title2 span');
-    //       console.log(activeSpan);
-    //       for(let j = 0; j < activeSpan.length; j++){
-    //         activeSpan[j].style.opacity = '1';
-    //       }
-    //       activeBox = [];
-    //       activeSpan = [];
-    //       console.log(activeBox, activeSpan);
-    //       break;
-    //     }
-    //   }
-    // }
+    getIndex(selector){
+      const elem = document.querySelector(selector);
+      for(let i = 0; i < elem.parentNode.childNodes.length; i++){
+        if(elem.parentNode.childNodes[i] === elem){
+          this.count = i+1;
+        }
+      }
+    },
+    addCountBox(){
+      let countBox = document.createElement('div');
+      let count = document.createTextNode(`${this.count}  of 3`);
+      countBox.className = 'countBox';
+      countBox.appendChild(count);
+      var wrap = document.querySelector('.wrap');
+      wrap.appendChild(countBox);
+      countBox.style.cssText = `position: absolute;
+                                left: 50%;
+                                top: 24%;
+                                transform: translateX(510px) rotate(90deg);
+                                font-size: 1.2rem;
+                                font-family: "Domine",serif`
+    },
+    startLoading(){
+      this.LoadingStatus = true;
+    },
+    endLoading(){
+      setTimeout(()=>{
+        this.LoadingStatus = false;
+      },8000)
+    }
   },
   computed: {
     ...mapGetters(['fetchedAbout','fetchedProject','fetchedContact']),
@@ -148,21 +132,22 @@ export default {
     this.$store.dispatch('FETCH_ABOUT');
     this.$store.dispatch('FETCH_PROJECT');
     this.$store.dispatch('FETCH_CONTACT');
+    this.startLoading();
   },
   mounted(){
-    var wrap = document.querySelector('.wrap');
-    pageHeight(wrap);
+    this.endLoading();
+    var homeWrap = document.querySelector('.wrap');
+    pageHeight(homeWrap);
     this.resizeBoxHeight();
     window.addEventListener('resize', this.resizeBoxHeight());
-    Slider(wrap);
-    // this.doMouseOver();
-    // this.fetchData();
-    // this.initTitle();
-    // window.addEventListener('wheel', this.onTitle());
+    Slider(homeWrap);
+    this.getIndex('.on');
+    homeWrap.addEventListener('scroll', this.getIndex('.on'));
+    this.addCountBox();
   },
-  updated(){
-    // this.resizeBoxHeight();
-  },
+  beforeDestroy(){
+    // this.LoadingStatus = false;
+  }
 }
 </script>
 
@@ -215,6 +200,7 @@ export default {
   width: 400px;
   height: 600px;
   -webkit-filter: grayscale(70%);
+  filter: grayscale(70%);
 }
 .img > img:nth-child(1){
   transform: translate(100%,0) scale(40%);
@@ -230,9 +216,6 @@ export default {
 }
 .box.on .img > img:nth-child(2){
   transform: scale(60%) rotate(-25deg) translate(-120%, 0);
-}
-.box.on .img > img:nth-child(3){
-  
 }
 .box.on:hover .img > img:nth-child(1){
   transform: translate(165%, -10%) rotate(23deg) scale(70%);
@@ -294,5 +277,11 @@ export default {
 .box.on .title2 span{
   opacity: 1;
   top: 0;
+}
+.countBox{
+  position: absolute;
+  top: 80px;
+  right: 50%;
+  height: 50px;
 }
 </style>

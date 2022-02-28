@@ -78,6 +78,13 @@ export default {
           mPageImgURL: ['m_29cm1.png', 'm_29cm2.png'],
           content: '29CM. marked up using HTML and CSS and created an automatic banner with JS. Also, It is designed as a responsive web layout.'
         },
+        {
+          name : 'LotteHotelShop',
+          link : '/LotteHotelShop',
+          pageImgURL: 'LotteHotelShop1.png',
+          mPageImgURL: ['m_LotteHotelShop1.png', 'm_LotteHotelShop2.png'],
+          content: 'LOTTE HOTEL e-SHOP. marked up using HTML and SCSS and created an automatic banner with JS. Also, It is designed as a responsive web layout.'
+        },
       ],
       pageNum: '004',
     }
@@ -89,19 +96,23 @@ export default {
         // console.log(parseInt(pageYOffset));
 
         let semantic = document.querySelectorAll('.semantic .content');
-        let responsive = document.querySelector('.responsive .content');
-        let mResponsive = document.querySelector('.responsive .content .mimgBox');
+        let responsive = document.querySelectorAll('.responsive .content');
+        let mResponsive = document.querySelectorAll('.responsive .content .mimgBox');
         
         for(var i = 0; i < semantic.length; i++){
           if(pageYOffset > semantic[i].offsetTop-500){
               semantic[i].classList.add("show");
           }
         }
-        if(pageYOffset > responsive.offsetTop-500){
-            responsive.classList.add("show");
+        for(var j = 0; j < responsive.length; j++){
+          if(pageYOffset > responsive[j].offsetTop-500){
+              responsive[j].classList.add("show");
+          }
         }
-        if(pageYOffset > mResponsive.offsetTop-700){
-            mResponsive.classList.add("show");
+        for(var m = 0; m < mResponsive.length; m++){
+          if(pageYOffset > mResponsive[m].offsetTop-700){
+              mResponsive[m].classList.add("show");
+          }
         }
       })
     },
@@ -244,6 +255,7 @@ export default {
   letter-spacing: -1px;
   margin: 180px auto 50px;
   text-align: right;
+  word-break: keep-all;
 }
 .mimgBox{
   width: 90%;
@@ -274,5 +286,8 @@ export default {
 .responsive .content .mimgBox.show{
   opacity: 1;
   transform: scale(1);
+}
+.responsive li{
+  margin-bottom: 100px;
 }
 </style>
