@@ -1,0 +1,169 @@
+//font
+$title-font: 'Domine', serif;
+$subTitle-font: 'Cormorant Garamond', serif;
+$content-font: 'Barlow', sans-serif;
+$num-font: 'Tinos', serif;
+$korean-font: 'Noto Sans KR', sans-serif;
+
+//colors
+$black: #1f1f1f;
+$t-black: #000;
+$white: #fff;
+$red: #f33a3a;
+$lightred: lightcoral;
+$gray: #707070;
+$grayscale: grayscale(70%);
+$bg-color: #f6eee3;
+
+//border
+$b-style: solid;
+$b-color: #4b4b4b;
+$border: 0.5px $b-style $b-color;
+
+//title mixin
+@mixin title{
+    font: {
+        size: 9rem;
+        weight: 300;
+        family: $title-font;
+    }
+    color: $t-black;
+    position: relative;
+    margin-bottom: 250px;
+    letter-spacing: -8px;
+    text-align: center;
+    @content;
+}
+
+//subTitle mixin
+@mixin subTitle{
+    font: {
+        family: $subTitle-font;
+        size: 1.5rem;
+    }
+    display: block;
+    transform: translateY(-80px);
+    text-align: center;
+}
+
+
+//part8 mixin
+@mixin part8{
+    & {
+        padding-top: 400px;
+        position: relative;
+        width: 100%;
+        text-align: center;
+      
+        .cc {
+          font-size: 20rem;
+        }
+      
+        .footer {
+          margin: 0 auto;
+          padding: 50px 0;
+          width: 70%;
+          max-width: 1317px;
+          border-top: $border;
+          border-bottom: $border;
+      
+          span {
+            display: block;
+      
+            &:nth-child(1) {
+              text-align: left;
+              font-weight: 300;
+              font-size: 25px;
+            }
+      
+            &:nth-child(2) {
+              text-align: center;
+              font-size: 13rem;
+              letter-spacing: -13px;
+              line-height: 1;
+            }
+          }
+        }
+    }
+      
+    span.box002, p.cc {
+        white-space: nowrap;
+        font: {
+        family: $num-font;
+        weight: 100;
+        }
+    }
+    
+}
+
+//position mixin
+@mixin position($x: 0, $y: 0, $w: 100%){
+    position: absolute;
+    left: $x;
+    top: $y;
+    width: $w;
+
+    @if($x == 50% and $y == 50%){
+        transform: translate(-50%,-50%);
+    }@else if($x == 50%){
+        transform: translateX(-50%);
+    }@else if($y == 50%){
+        transform: translateY(-50%);
+    }
+}
+
+//transition mixin
+@mixin transition($elem: all, $t: 0.5s, $d: 0){
+    transition: $elem $t $d;
+}
+
+//prefix mixin
+@mixin prefix($w, $h, $position: absolute) {
+    content: '';
+    display: block;
+    width: $w;
+    height: $h;
+    position: $position;
+    @content;
+}
+
+//clear mixin
+@mixin clear {
+    &::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// 화면크기
+$mobile: 766px;
+$tablet: 1400px;
+$desktop: 1401px;
+
+// 반응형
+@mixin mobile{
+    @media (max-width: $mobile){
+        @content;
+    }
+}
+@mixin tablet{
+    @media (min-width: $moblie + 1) and (max-width: $tablet){
+        @content;
+    }
+}
+@mixin desktop{
+    @media (min-width: $desktop){
+        @content;
+    }
+}
+
+//반응형 폰트 스타일
+@mixin desktopFont($family, $size){
+    font: {
+        family: $family;
+        size: $size;
+    }
+    @content;
+}
+

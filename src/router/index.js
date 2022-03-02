@@ -19,6 +19,10 @@ export const router = new VueRouter({
       path: '/portfolio_pb',
       redirect: '/home',
     },
+    // {
+    //   path: '/',
+    //   redirect: '/home',
+    // },
     {
       // path: url 이름(주소)
       path: '/home',

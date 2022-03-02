@@ -27,42 +27,50 @@ export default {
 }
 </script>
 
-<style scoped>
-label{
-    margin-left: 30px;
+<style scoped lang="scss">
+label {
+  margin-left: 30px;
 }
-input, textarea{
-    border: none;
+
+input, textarea {
+  border: none;
 }
-input:hover, textarea:hover,
-input:focus, textarea:focus{
-    background-color: lightcoral;
-    color: #fff;
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+  background-color: $lightred;
+  color: $white;
 }
-input:hover::placeholder, textarea:hover::placeholder,
-input:focus::placeholder, textarea:focus::placeholder{
-    color: #fff;
+
+input:hover::placeholder, textarea:hover::placeholder, input:focus::placeholder, textarea:focus::placeholder {
+  color: $white;
 }
-.fromName, .fromEmail{
-    padding: 5px 0;
-    margin: 10px 0 20px 0;
+
+.fromName, .fromEmail {
+  padding: 5px 0;
+  margin: 10px 0 20px 0;
 }
-.fromMsg{
-    padding: 10px 0;
-    margin-top: 10px;
-    height: 120px;
+
+.fromMsg {
+  padding: 10px 0;
+  margin-top: 10px;
+  height: 120px;
 }
-*::placeholder{
-    font-size: 12px;
-    font-style: italic;
+
+*::placeholder {
+
+  font: {
+    size: 12px;
+    style: italic;
+  }
 }
-.sendBtn{
-    float: right;
-    margin-top: 50px;
-    padding: 5px 20px;
-    background: lightcoral;
-    border-radius: 5px;
-    color: #fff;
-    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+
+.sendBtn {
+  float: right;
+  margin-top: 50px;
+  padding: 5px 20px;
+  background: $lightred;
+  border-radius: 5px;
+  color: $white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 </style>

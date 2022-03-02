@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .btnWrap{
     position: fixed;
     right: 5%;
@@ -32,7 +32,7 @@ export default {
     height: 50px;
     line-height: 50px;
     border-radius: 100%;
-    background: #000 url('../img/ico_top.png') no-repeat 50% 50%;
+    background: $t-black url('../img/ico_top.png') no-repeat 50% 50%;
     background-size: 20px;
     text-indent: -9999px;
     opacity: 0.4;

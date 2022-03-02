@@ -144,85 +144,52 @@ export default {
 }
 </script>
 
-<style scoped>
-.pjtWrap{
+<style scoped lang="scss">
+.pjtWrap {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-.title{
+
+.title {
   word-break: keep-all;
 }
-#pjts{
+
+#pjts {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
+
+  li {
+    width: 100%;
+    opacity: 1;
+    transition: all .7s;
+    position: absolute;
+    bottom: -100%;
+
+    &:first-child {
+      bottom: 0;
+    }
+  }
 }
-#pjts li{
+
+.bgBox {
   width: 100%;
-  opacity: 1;
-  transition: all .7s;
-  position: absolute;
-  bottom: -100%;
-}
-#pjts li:first-child{
-  bottom: 0;
-}
-.bgBox{
-  width: 100%;
-  /* max-width: 700px; */
   height: 100%;
   text-align: center;
   box-sizing: border-box;
+
+  .comment {
+    padding-top: 30px;
+    font: {
+      family: $korean-font;
+      size: 1.5rem;
+      weight: 300;
+    }
+  }
 }
 
-.bgBox .comment{
-  padding-top: 30px;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-.bgBox .title{
-  font-family: 'Domine', serif;
-  font-size: 15em;
-}
-.part8{
-  padding-top: 400px;
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-.part8 .cc{
-  font-size: 20rem;
-}
-.part8 .footer {
-  margin: 0 auto;
-  padding: 50px 0;
-  width: 70%;
-  max-width: 1317px;
-  border-top: 0.5px solid rgb(75, 75, 75);
-  border-bottom: 0.5px solid rgb(75, 75, 75);
-}
-.part8 .footer span{
-  display: block;
-}
-.part8 .footer span:nth-child(1){
-  text-align: left;
-  font-weight: 300;
-  font-size: 25px; 
-}
-.part8 .footer span:nth-child(2){
-  text-align: center;
-  font-size: 13rem; 
-  letter-spacing: -13px;
-  line-height: 1;
-}
-span.box002,
-p.cc{
-  font-family: 'Tinos', serif;
-  white-space: nowrap;
-  font-weight: 100;
-}
+.part8 {@include part8;}
 
 </style>

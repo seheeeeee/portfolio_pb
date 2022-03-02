@@ -84,28 +84,26 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 div{
     width: 100%;
     text-align: center;
 }
 .strBox{
     font-size: 18rem;
-    font-family: 'Domine', serif;
+    font-family: $title-font;
     font-weight: 300;
     letter-spacing: -8px;
-    color: #000;
+    color: $t-black;
     overflow: hidden;
     width: 100%;
     height: 100%;
     position: relative;
-}
 
-/* wheel animation */
-.strBox span{
-    display: inline-block;
-    transform: translateY(-300px);
-    transition: all 1s;
+    span{
+        display: inline-block;
+        transform: translateY(-300px);
+        transition: all 1s;
+    }
 }
-
 </style>

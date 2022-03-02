@@ -23,70 +23,86 @@ export default {
 }
 </script>
 
-<style scoped>
-.flex { /*Flexbox for containers*/
+<style scoped lang="scss">
+.flex {
+  /*Flexbox for containers*/
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.waveBlock{
+.waveBlock {
   position: fixed;
-  right: 0; bottom: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   z-index: 1;
 }
+
 .waves {
-  position:relative;
+  position: relative;
   width: 100%;
-  height:15vh;
-  margin-bottom:-7px; /*Fix for safari gap*/
-  min-height:100px;
-  max-height:150px;
+  height: 15vh;
+  margin-bottom: -7px;
+
+  /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
 }
+
 .waveContent {
-  position:relative;
-  height:5vh;
-  text-align:center;
-  background-color: white;
+  position: relative;
+  height: 5vh;
+  text-align: center;
+  background-color: $white;
 }
+
 /* Animation */
+
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+
+  &:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  &:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
 }
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
+
 @keyframes move-forever {
   0% {
-   transform: translate3d(-90px,0,0);
+    transform: translate3d(-90px, 0, 0);
   }
-  100% { 
-    transform: translate3d(85px,0,0);
+
+  100% {
+    transform: translate3d(85px, 0, 0);
   }
 }
+
 /*Shrinking for mobile*/
-@media (max-width: 768px) {
+@include mobile{
   .waves {
-    height:40px;
-    min-height:40px;
+    height: 40px;
+    min-height: 40px;
   }
+
   .waveContent {
-    height:20vh;
+    height: 20vh;
   }
 }
 </style>

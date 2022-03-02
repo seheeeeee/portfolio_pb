@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import './default/default.css'; 
 /* 메인타이틀 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
@@ -38,14 +38,15 @@ export default {
 /* 본문 폰트 */
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 #app {
-  height: auto;
   padding: 0;
   margin: 0;
-  background-color: #f6eee3;
+  height: auto;
   position: relative;
-  color: #1f1f1f;
   z-index: 0;
+  background-color: $bg-color;
+  color: $black;
   cursor: none;
 }
 /* Router Transition */
@@ -56,19 +57,16 @@ export default {
   opacity: 0;
 }
 h1.title {
-  font-family: 'Domine', serif;
-  text-align: center;
-  width: 1000px;
-  margin: 0 auto 250px;
-  font-size: 9rem;
-  font-weight: 300;
-  letter-spacing: -8px;
-  color: #000;
-  position: relative;
+  @include title;
 }
-.clearFix::before{
-  content: '';
-  display: block;
-  clear: both;
+h3.title {
+  @include title{
+    font-size: 15rem;
+    word-break: keep-all;
+    margin-bottom: 0;
+  };
+}
+.clearFix{
+  @include clear;
 }
 </style>

@@ -15,13 +15,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .numBox{
   padding-right: 50px;
   font-size: 20rem !important;
   text-align: right;
   line-height: 0;
-  font-family: 'Tinos', serif !important;
+  font-family: $num-font;
   white-space: nowrap;
 }
 </style>

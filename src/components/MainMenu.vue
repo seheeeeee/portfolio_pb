@@ -147,43 +147,47 @@ export default {
 }
 </script>
 
-<style scoped>
-.mainMenu{
+<style scoped lang="scss">
+.mainMenu {
   display: block;
   position: fixed;
-  right: 70px; 
+  right: 70px;
   bottom: 50px;
   z-index: 990;
   text-align: right;
+
+  > span {
+      font: {
+        family: $title-font;
+        weight: 500;
+        size: 1.5rem;
+      }
+      cursor: pointer;
+  }
+
+  &.active .menuBtn {
+    height: 100vh;
+    position: fixed;
+    opacity: 1;
+    z-index: 999;
+  }
+
+  .menuBtn {
+    background-color: #000;
+    width: 100vw;
+    height: 0;
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    padding: 100px 100px;
+    overflow-y: hidden;
+    z-index: -1;
+    opacity: 0;
+    transition: all .4s;
+  }
 }
-.mainMenu > span{
-  font-family: 'Domine', serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.mainMenu.active .menuBtn{
-  height: 100vh;
-  position: fixed;
-  opacity: 1;
-  z-index: 999;
-}
-.mainMenu .menuBtn{
-  background-color: #000;
-  width: 100vw;
-  height: 0;
-  position: absolute;
-  /* right: -50px;
-  top: -200vh; */
-  right: -50px;
-  top: -50px;
-  padding: 100px 100px;
-  overflow-y: hidden;
-  z-index: -1;
-  opacity: 0;
-  transition: all .4s;
-}
-.menuBtn ul{
+
+.menuBtn ul {
   position: relative;
   left: 55%;
   top: 50%;
@@ -191,100 +195,98 @@ export default {
   overflow-y: scroll;
   overflow-x: hidden;
   transform: translateY(-50%);
-  /* height: 70%; */
-  /* scroll-snap-type: y mandatory; */
-}
-.mainMenu ul li {
-  /* margin-bottom: 15px; */
-  position: relative;
-  /* scroll-snap-align: start; */
-}
-.mainMenu ul li:after{
-  content: '';
-  display: inline;
-  width: 0;
-  height: 2px;
-  background: #fff;
-  position: absolute;
-  left: 0; 
-  top: 50%;
-  transform: translateY(-50%);
-  transition: width .3s;
-}
-.mainMenu ul li:nth-child(1):hover:after,
-.mainMenu ul li:nth-child(4):hover:after{
-  width: 413px;
-}
-.mainMenu ul li:nth-child(2):hover:after,
-.mainMenu ul li:nth-child(5):hover:after{
-  width: 536px;
-}
-.mainMenu ul li:nth-child(3):hover:after,
-.mainMenu ul li:nth-child(6):hover:after{
-  width: 559px;
-}
-.mainMenu ul li span{
-  font-size: 12px;
-  color: #fff;
-  display: block;
-  position: absolute;
-  left: -33px;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  border-radius: 50%;
-  border: 0.5px solid transparent;
-  transition: all .5s;
 }
 
-.mainMenu ul li:hover span{
-  border-color: rgba(255,255,255, 0.6);
+.mainMenu ul li {
+  position: relative;
+
+  &::after {
+    @include prefix(0,2px){
+      background: $white;
+      @include position(0, 50%, 0);
+      transition: width .3s;
+    }
+  }
+
+  &:nth-child(1):hover::after, &:nth-child(4):hover::after {
+    width: 413px;
+  }
+
+  &:nth-child(2):hover::after, &:nth-child(5):hover::after {
+    width: 536px;
+  }
+
+  &:nth-child(3):hover::after, &:nth-child(6):hover::after {
+    width: 559px;
+  }
+
+  span {
+    font-size: 12px;
+    color: $white;
+    display: block;
+    position: absolute;
+    left: -33px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    border: 0.5px solid transparent;
+    transition: all .5s;
+  }
+
+  &:hover span {
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  a {
+    color: $white;
+    font: {
+      size: 7rem;
+      family: $title-font;
+      weight: 100;
+    }
+  }
 }
-.mainMenu ul li a{
-  color: #fff;
-  font-size: 7rem;
-  font-family: 'Domine', serif;
-  font-weight: 100;
-}
-.removeBtn{
-  color: #fff;
-  position: relative; 
+
+.removeBtn {
+  position: relative;
   left: 130px;
   bottom: -120px;
   z-index: 99;
-  font-size: 1.5rem;
-  font-family: 'Domine', serif;
+  font: {
+    size: 1.5rem;
+    family: $title-font;
+  }
+  color: $white;
   cursor: pointer;
   text-align: left;
 }
 
-
 .menu {
-  /* height: 100vh; */
   overflow: hidden;
-  background: #fff;
+  background: $white;
   cursor: grab;
+
+  &.is-dragging {
+    cursor: grabbing;
+  }
 }
-.menu.is-dragging {
-  cursor: grabbing;
-}
+
 .menu--item {
-  /* counter-increment: count; */
   position: absolute;
   z-index: 1;
   top: 0;
   left: 33px;
-  /* font-size: 120px; */
   line-height: 1.2;
   padding: 1rem 0;
   text-align: left;
 }
-@media (max-width: 767px) {
+
+@include mobile{
   .menu--item {
     font-size: 30px;
     padding: 1rem 0;
   }
 }
-
 </style>

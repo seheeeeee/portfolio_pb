@@ -151,134 +151,169 @@ export default {
 }
 </script>
 
-<style scoped>
-.wrap{
+<style scoped lang="scss">
+.wrap {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-.box{
+
+.box {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
   position: absolute;
   bottom: -100%;
   right: 0;
   transition: all .7s;
-}
-.box.aboutBox{
-  bottom: 0;
-}
-.sublink{
-  display: block;
-}
-.title{
-  width: 100%;
-  text-align: center;
-  position: absolute; left: 0; top: 50%;
-  z-index: 10;
-  font-size: 0;
-  font-family: 'Domine', serif;
-  color: rgb(243, 58, 58);
-  font-weight: 100;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transform: translateY(-50%);
-}
-.img{
-  min-width: 700px;
-  /* position: absolute;
-  left: 50%;
-  top: 50%; */
-  /* transform: translate(-50%, -50%); */
-  white-space: nowrap;
-}
-.img > img{
-  transition: all .7s ease-out;
-  width: 400px;
-  height: 600px;
-  -webkit-filter: grayscale(70%);
-  filter: grayscale(70%);
-}
-.img > img:nth-child(1){
-  transform: translate(100%,0) scale(40%);
-}
-.img > img:nth-child(2){
-  transform: scale(40%);
-}
-.img > img:nth-child(3){
-  transform: translate(-100%,0) scale(120%);
-}
-.box.on .img > img:nth-child(1){
-  transform: translate(170%, -10%) rotate(25deg) scale(70%);
-}
-.box.on .img > img:nth-child(2){
-  transform: scale(60%) rotate(-25deg) translate(-120%, 0);
-}
-.box.on:hover .img > img:nth-child(1){
-  transform: translate(165%, -10%) rotate(23deg) scale(70%);
-}
-.box.on:hover .img > img:nth-child(2){
-  transform: scale(60%) rotate(-22deg) translate(-115%, 0);
+
+  &.aboutBox {
+    bottom: 0;
+  }
 }
 
-.box .title2{
+.sublink {
+  display: block;
+}
+
+.title {
   width: 100%;
-  /* height: 1px; */
-  text-align: center;
-  position: absolute; left: 0; top: 50%;
+  @include position(0, 50%, 100%);
   z-index: 10;
-  font-family: 'Domine', serif;
-  color: rgb(243, 58, 58);
-  font-weight: 100;
-  text-transform: uppercase;
+  font: {
+    size: 0;
+    family: $title-font;
+    weight: 100;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  color: $red;
   white-space: nowrap;
   transform: translateY(-50%);
-  overflow: hidden;
 }
-.box .title2 span{
-  font-size: 17rem;
-  text-transform: uppercase;
-  color: rgb(243, 58, 58);
-  opacity: 0;
-  position: relative;
-  top: 250px;
-  transition: all .7s .7s;
+
+.img {
+  min-width: 700px;
+  white-space: nowrap;
+
+  > img {
+    transition: all .7s ease-out;
+    width: 400px;
+    height: 600px;
+    -webkit-filter: $grayscale;
+    filter: $grayscale;
+
+    &:nth-child(1) {
+      transform: translate(100%, 0) scale(40%);
+    }
+
+    &:nth-child(2) {
+      transform: scale(40%);
+    }
+
+    &:nth-child(3) {
+      transform: translate(-100%, 0) scale(120%);
+    }
+  }
 }
-.box .title2 span:nth-child(1){
-  transition-delay: .7s;
+
+.box {
+  &.on {
+    .img > img {
+      &:nth-child(1) {
+        transform: translate(170%, -10%) rotate(25deg) scale(70%);
+      }
+
+      &:nth-child(2) {
+        transform: scale(60%) rotate(-25deg) translate(-120%, 0);
+      }
+    }
+
+    &:hover .img > img {
+      &:nth-child(1) {
+        transform: translate(165%, -10%) rotate(23deg) scale(70%);
+      }
+
+      &:nth-child(2) {
+        transform: scale(60%) rotate(-22deg) translate(-115%, 0);
+      }
+    }
+  }
+
+  .title2 {
+    width: 100%;
+    @include position(0, 50%, 100%);
+    z-index: 10;
+    font: {
+      family: $title-font;
+      weight: 100;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    color: $red;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    span {
+      font-size: 17rem;
+      text-transform: uppercase;
+      color: $red;
+      opacity: 0;
+      position: relative;
+      top: 250px;
+      transition: all .7s .7s;
+
+      &:nth-child(1) {
+        transition-delay: .7s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: .75s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: .8s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: .85s;
+      }
+
+      &:nth-child(5) {
+        transition-delay: .9s;
+      }
+
+      &:nth-child(6) {
+        transition-delay: .95s;
+      }
+
+      &:nth-child(7) {
+        transition-delay: 1.0s;
+      }
+
+      &:nth-child(8) {
+        transition-delay: 1.05s;
+      }
+
+      &:nth-child(9) {
+        transition-delay: 1.1s;
+      }
+    }
+  }
+
+  &.on .title2 span {
+    opacity: 1;
+    top: 0;
+  }
 }
-.box .title2 span:nth-child(2){
-  transition-delay: .75s;
-}
-.box .title2 span:nth-child(3){
-  transition-delay: .8s;
-}
-.box .title2 span:nth-child(4){
-  transition-delay: .85s;
-}
-.box .title2 span:nth-child(5){
-  transition-delay: .9s;
-}
-.box .title2 span:nth-child(6){
-  transition-delay: .95s;
-}
-.box .title2 span:nth-child(7){
-  transition-delay: 1.0s;
-}
-.box .title2 span:nth-child(8){
-  transition-delay: 1.05s;
-}
-.box .title2 span:nth-child(9){
-  transition-delay: 1.1s;
-}
-.box.on .title2 span{
-  opacity: 1;
-  top: 0;
-}
-.countBox{
+
+.countBox {
   position: absolute;
   top: 80px;
   right: 50%;

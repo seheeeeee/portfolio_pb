@@ -141,156 +141,185 @@ export default {
 }
 </script>
 
-<style scoped>
-.pubWrap{
+<style scoped lang="scss">
+.pubWrap {
   width: 100%;
   height: 100%;
   padding: 300px 0 200px;
+
+  section {
+    margin: 700px 5% 0;
+    font-family: $content-font;
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    padding-bottom: 300px;
+
+    &:nth-of-type(1) {
+      margin-top: 425px;
+      margin-bottom: 350px;
+    }
+
+    h2 {
+      margin-bottom: 200px;
+      width: 80%;
+      color: $white;
+      background-color: $black;
+      font: {
+        weight: 700;
+        size: 2rem;
+      }
+      line-height: 1.2;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transform: translateX(-400px);
+    }
+
+    ul {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      li {
+        flex: 1;
+        padding: 50px 30px;
+        margin-top: 400px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 
-.pubWrap section{
-  margin: 700px 5% 0;
-  font-family: 'Barlow', sans-serif;
-  width: 90%;
-  height: 100%;
-  text-align: center;
-  padding-bottom: 300px;
-  /* border-bottom: 1px solid green; */
-}
-.pubWrap section:nth-of-type(1){
-  margin-top: 425px;
-  margin-bottom: 350px;
-}
-.pubWrap section h2{
-  width: 80%;
-  color: #fff;
-  background-color: #1f1f1f;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.2;
-  margin-bottom: 200px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  transform: translateX(-400px);
-}
-.pubWrap section ul{
-  margin: 0 auto;
-  width: 100%;
-  /* min-width: 400px;
-  max-width: 700px; */
-  height: 100%;
-  /* display: flex;
-  justify-content: space-around; */
-  
-}
-.pubWrap section ul li{
-  flex: 1;
-  /* border: 1px solid red; */
-  padding: 50px 30px;
-  margin-top: 400px;
-}
-.pubWrap section ul li:first-child{
-  margin-top: 0;
-}
-.itemTit{
+.itemTit {
   display: block;
-  font-size: 20px;
-  color: #1f1f1f;
-  font-weight: 900;
   margin-bottom: 20px;
-}
-.pubWrap section .content{
-  text-align: center;
-}
-.pubWrap section .content .imgBox{
-  width: 90%;
-  margin: 0 auto 30px;
-  height: 100%;
-  position: relative;
-}
-.pubWrap section .content .imgBox::after{
-  opacity: 0;
-  transition: all .7s;
-}
-.pubWrap section .content .imgBox:hover::before{
-  content: 'view more';
-  color: #fff;
-  font-size: 40px;
-  font-weight: 500;
-  letter-spacing: -2.5px;
-  text-shadow: 0px 0px 5px rgba(0,0,0,1);
-  text-align: center;
-  border-radius: 20px 20px 0 20px;
-  display: block;
-  width: 200px;
-  height: 60px;
-  line-height: 51px;
-  position: absolute; 
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-  z-index: 11;
-  opacity: 0.8;
-}
-.pubWrap section .content .imgBox:hover::after{
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  position: absolute; 
-  left: 0;
-  top: 0;
-  z-index: 10;
-  opacity: 0.6;
-}
-.pubWrap section .content .imgBox img{
-  display: block;
-  width: 100%;
+  font-size: 20px;
+  color: $black;
+  font-weight: 900;
 }
 
-.pubWrap section .content .detailBox{
-  width: 90%;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 300;
-  font-size: 35px;
-  line-height: 1.4;
-  letter-spacing: -1px;
-  margin: 180px auto 50px;
-  text-align: right;
-  word-break: keep-all;
+.pubWrap section .content {
+  text-align: center;
+
+  .imgBox {
+    width: 90%;
+    margin: 0 auto 30px;
+    height: 100%;
+    position: relative;
+    
+    &::after {
+      content: '';
+      opacity: 0;
+      transition: all .7s;
+    }
+
+    &:hover {
+      &::before {
+        content: 'view more';
+        @include position(50%, 50%, 200px);
+        display: block;
+        width: 200px;
+        height: 60px;
+        line-height: 51px;
+
+        font: {
+          size: 40px;
+          weight: 500;
+        }
+        text: {
+          shadow: 0px 0px 5px $t-black;
+          align: center;
+        }
+        letter-spacing: -2.5px;
+        border-radius: 20px 20px 0 20px;
+        color: $white;        
+        z-index: 11;
+        opacity: 0.8;
+      }
+
+      &::after {
+        @include prefix(100%,100%){
+          background: $t-black;
+          @include position(0,0,100%);
+          z-index: 10;
+          opacity: 0.6;
+        };
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .detailBox {
+    width: 90%;
+    margin: 180px auto 50px;
+    font: {
+      family: $content-font;
+      weight: 300;
+      size: 35px;
+    }
+    line-height: 1.4;
+    letter-spacing: -1px;
+    text-align: right;
+    word-break: keep-all;
+  }
 }
-.mimgBox{
+
+.mimgBox {
   width: 90%;
   margin: 350px auto 0;
+
+  img {
+    display: inline-block;
+    width: 40%;
+    min-width: 400px;
+    margin-right: 300px;
+
+    &:nth-child(2) {
+      margin-right: 0;
+      transform: translateY(300px);
+      width: 30%;
+      min-width: 300px;
+    }
+  }
 }
-.mimgBox img{
-  display: inline-block;
-  width: 40%;
-  min-width: 400px;
-  margin-right: 300px;
-}
-.mimgBox img:nth-child(2){
-  margin-right: 0;
-  transform: translateY(300px);
-  width: 30%;
-  min-width: 300px;
-}
-.semantic .content .imgBox,
-.responsive .content .imgBox,
-.responsive .content .mimgBox{
+
+.semantic .content .imgBox {
   opacity: 0;
-  transform: scale(1.3); 
+  transform: scale(1.3);
   transform-origin: center;
   transition: all .8s;
 }
-.semantic .content.show .imgBox,
-.responsive .content.show .imgBox,
-.responsive .content .mimgBox.show{
+
+.responsive .content {
+  .imgBox, .mimgBox {
+    opacity: 0;
+    transform: scale(1.3);
+    transform-origin: center;
+    transition: all .8s;
+  }
+}
+
+.semantic .content.show .imgBox {
   opacity: 1;
   transform: scale(1);
 }
-.responsive li{
-  margin-bottom: 100px;
+
+.responsive {
+  .content {
+    &.show .imgBox, .mimgBox.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  li {
+    margin-bottom: 100px;
+  }
 }
 </style>

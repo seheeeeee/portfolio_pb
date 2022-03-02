@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .mainLogo{
     width: 70px;
     height: 70px;
@@ -29,9 +29,7 @@ export default {
 }
 
 .mainLogo{
-    position: absolute;
-    left: 70px; 
-    top: 80px;
+    @include position(70px, 80px, 70px);
     z-index: 100;
 }
 .mainlogo_bk, .mainlogo_w{
@@ -46,7 +44,7 @@ export default {
     display: none;
 }
 .nightMode .mainLogo{
-    background-color: #000;
+    background-color: $t-black;
 }
 .nightMode .mainlogo_bk{
     display: none;
