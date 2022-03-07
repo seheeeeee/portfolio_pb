@@ -73,5 +73,9 @@ export const router = new VueRouter({
       path: '/site-LotteHotelShop',
       beforeEnter() {location.href = 'https://seheeeeee.github.io/site-LotteHotelShop/'}
     },
+    {
+      path: '/GuessTheWord',
+      beforeEnter() {location.href = 'https://seheeeeee.github.io/GuessTheWord/'}
+    },
   ],
 });

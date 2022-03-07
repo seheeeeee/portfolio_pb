@@ -46,56 +46,6 @@ $border: 0.5px $b-style $b-color;
     text-align: center;
 }
 
-
-//part8 mixin
-@mixin part8{
-    & {
-        padding-top: 400px;
-        position: relative;
-        width: 100%;
-        text-align: center;
-      
-        .cc {
-          font-size: 20rem;
-        }
-      
-        .footer {
-          margin: 0 auto;
-          padding: 50px 0;
-          width: 70%;
-          max-width: 1317px;
-          border-top: $border;
-          border-bottom: $border;
-      
-          span {
-            display: block;
-      
-            &:nth-child(1) {
-              text-align: left;
-              font-weight: 300;
-              font-size: 25px;
-            }
-      
-            &:nth-child(2) {
-              text-align: center;
-              font-size: 13rem;
-              letter-spacing: -13px;
-              line-height: 1;
-            }
-          }
-        }
-    }
-      
-    span.box002, p.cc {
-        white-space: nowrap;
-        font: {
-        family: $num-font;
-        weight: 100;
-        }
-    }
-    
-}
-
 //position mixin
 @mixin position($x: 0, $y: 0, $w: 100%){
     position: absolute;
@@ -167,3 +117,76 @@ $desktop: 1401px;
     @content;
 }
 
+//part8 mixin
+@mixin part8{
+    & {
+        padding-top: 400px;
+        position: relative;
+        width: 100%;
+        text-align: center;
+      
+        .cc {
+          font-size: 20rem;
+        }
+      
+        .footer {
+          margin: 0 auto;
+          padding: 50px 0;
+          width: 70%;
+          max-width: 1317px;
+          border-top: $border;
+          border-bottom: $border;
+      
+            span {
+                display: block;
+      
+                &:nth-child(1) {
+                text-align: left;
+                font-weight: 300;
+                font-size: 25px;
+                }
+        
+                &:nth-child(2) {
+                text-align: center;
+                font-size: 13rem;
+                letter-spacing: -13px;
+                line-height: 1;
+                }
+            }
+        }
+    }
+      
+    span.box002, p.cc {
+        white-space: nowrap;
+        font: {
+        family: $num-font;
+        weight: 100;
+        }
+    }
+
+    @include mobile{
+        & {
+            .cc{
+              font-size: 7rem;
+            }
+            .footer{
+              font-size: 7rem;
+            
+                span {
+                    &:nth-child(1) {
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                    }
+            
+                    &:nth-child(2) {
+                        letter-spacing: -5px;
+                        font-size: 5rem;
+                        white-space: normal;
+                        word-break: keep-all;
+                        text-align: left;
+                    }  
+                }
+            }
+        }
+    }
+}

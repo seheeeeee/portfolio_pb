@@ -50,6 +50,11 @@ export default {
           comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱하였습니다.',
         },
         {
+          name : 'Guess the word',
+          link : '/GuessTheWord',
+          comment : 'HTML5, SCSS, javascript을 이용하여 영어 단어 맞추기 application을 구성하였습니다.',
+        },
+        {
           name : 'Vue.js instagram',
           link : '/instagram',
           comment: 'Vue.js(Vue-cli3)를 이용하여 instagram-clone application을 구성하였습니다.',
@@ -111,9 +116,14 @@ export default {
     // }
     autoPaddingTop(){
       let vh = window.innerHeight;
+      let vw = window.innerWidth;
       let bgBox = document.querySelectorAll('.bgBox');
       for(let i = 0; i < bgBox.length; i++){
-        bgBox[i].style.paddingTop = `${vh*0.4}px`;
+        if(vw > 766){
+          bgBox[i].style.paddingTop = `${vh*0.4}px`;
+        }else{
+          bgBox[i].style.paddingTop = `${vh*0.35}px`;
+        }
       }
     },
     resizeBoxHeight(){
@@ -152,7 +162,9 @@ export default {
 }
 
 .title {
-  word-break: keep-all;
+  // word-break: keep-all;
+  white-space: nowrap;
+  @media (max-width: 1800px){font-size: 10rem;}
 }
 
 #pjts {
@@ -192,4 +204,28 @@ export default {
 
 .part8 {@include part8;}
 
+@include mobile{
+  .title{
+    font-size: 6rem;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  #pjts li{
+    &:first-child .bgBox{ 
+      h3{
+        padding-top: 50px;
+      }
+    }
+    .comment{
+      padding: 30px 40px 0;
+      font-size: 16px;
+      word-break: keep-all;
+    }
+  }
+  .part8{
+    padding-top: 0;
+    @include position(50%, 50%, 100%);
+  }
+}
 </style>

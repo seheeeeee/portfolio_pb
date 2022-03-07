@@ -395,6 +395,10 @@ export default {
         }
       }
     }
+
+    @include mobile{
+      @include part8;
+    };
   }
 
   div {
