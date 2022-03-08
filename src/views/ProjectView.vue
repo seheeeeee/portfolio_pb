@@ -9,7 +9,8 @@
               {{project.name}}
             </h3>
             <div class="comment">
-              {{project.comment}}
+              {{project.comment}}<br>
+              {{project.skills}}
             </div>
           </div>
         </router-link>
@@ -47,22 +48,26 @@ export default {
         {
           name : 'Web Sites',
           link : '/publishing',
-          comment : 'HTML5, CSS3 를 이용하여 관공서, 쇼핑몰 등의 웹사이트를 퍼블리싱하였습니다.',
+          comment : '웹브라우저 퍼블리싱',
+          skills : 'HTML / CSS / Media Query / Javascript',
         },
         {
           name : 'Guess the word',
           link : '/GuessTheWord',
-          comment : 'HTML5, SCSS, javascript을 이용하여 영어 단어 맞추기 application을 구성하였습니다.',
+          comment : '5글자 영어 단어 맞추기 게임',
+          skills : 'HTML / SCSS / Media Query / javascript',
         },
         {
-          name : 'Vue.js instagram',
+          name : 'Instagram-clone',
           link : '/instagram',
-          comment: 'Vue.js(Vue-cli3)를 이용하여 instagram-clone application을 구성하였습니다.',
+          comment: 'instagram-clone application',
+          skills : 'HTML / CSS / Vue.js',
         },
         {
           name : 'Vue.js schedule',
           link : '/scheduler',
-          comment: 'Vue.js(Vue-cli3)를 이용하여 schedule application을 구성하였습니다.',
+          comment: '분류별 스택 schedule application',
+          skills : 'HTML / CSS / Vue.js(Vue-cli)',
         },
       ],
       pageNum: '002',
@@ -199,6 +204,7 @@ export default {
       size: 1.5rem;
       weight: 300;
     }
+    line-height: 1.6;
   }
 }
 
