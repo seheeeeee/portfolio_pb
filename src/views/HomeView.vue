@@ -141,9 +141,9 @@ export default {
     this.resizeBoxHeight();
     window.addEventListener('resize', this.resizeBoxHeight());
     Slider(homeWrap);
-    this.getIndex('.on');
-    homeWrap.addEventListener('scroll', this.getIndex('.on'));
-    this.addCountBox();
+    // this.getIndex('.on');
+    // homeWrap.addEventListener('scroll', this.getIndex('.on'));
+    // this.addCountBox();
   },
   beforeDestroy(){
     // this.LoadingStatus = false;
