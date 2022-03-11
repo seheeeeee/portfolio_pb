@@ -139,10 +139,10 @@ export default {
     var homeWrap = document.querySelector('.wrap');
     pageHeight(homeWrap);
     this.resizeBoxHeight();
-    window.addEventListener('resize', this.resizeBoxHeight());
+    window.addEventListener('resize', this.resizeBoxHeight);
     Slider(homeWrap);
     // this.getIndex('.on');
-    // homeWrap.addEventListener('scroll', this.getIndex('.on'));
+    // homeWrap.addEventListener('scroll', this.getIndex);
     // this.addCountBox();
   },
   beforeDestroy(){

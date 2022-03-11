@@ -151,7 +151,7 @@ export default {
     Slider(pjts);
     this.autoPaddingTop();
     window.addEventListener('resize', this.autoPaddingTop);
-    window.addEventListener('resize', this.resizeBoxHeight());
+    window.addEventListener('resize', this.resizeBoxHeight);
   },
   destroyed(){ 
     window.removeEventListener('resize', this.autoPaddingTop);
