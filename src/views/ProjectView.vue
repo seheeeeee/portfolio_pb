@@ -132,9 +132,9 @@ export default {
       }
     },
     resizeBoxHeight(){
-      var boxes = document.querySelectorAll('#pjts li');
-      for (var i = 0; i < boxes.length; i++){
-        var box = boxes[i];
+      let boxes = document.querySelectorAll('#pjts li');
+      for (let i = 0; i < boxes.length; i++){
+        let box = boxes[i];
         box.style.height = (window.innerHeight) + 'px';
       }
     },

@@ -127,57 +127,60 @@ export default {
   methods: {
     showContent(){
       window.addEventListener('scroll', () =>{
-        let pageYOffset = window.pageYOffset;
+        const pageYOffset = window.pageYOffset;
         // console.log(parseInt(pageYOffset));
 
-        let part1 = document.querySelector('.part1');
-        let part2 = document.querySelector('.part2');
-        let part3 = document.querySelector('.part3');
-        let part4 = document.querySelector('.part4');
-        let part5 = document.querySelector('.part5');
-        let part6 = document.querySelector('.part6');
-        let part7 = document.querySelector('.part7');
-        let part8 = document.querySelector('.part8');
+        const part1 = document.querySelector('.part1');
+        const part2 = document.querySelector('.part2');
+        const part3 = document.querySelector('.part3');
+        const part4 = document.querySelector('.part4');
+        const part5 = document.querySelector('.part5');
+        const part6 = document.querySelector('.part6');
+        const part7 = document.querySelector('.part7');
+        const part8 = document.querySelector('.part8');
+
+        const showClass = 'show';
+
         if(part1 != null){
         if(pageYOffset > part1.offsetTop){
-            part1.classList.add("show");
+            part1.classList.add(showClass);
         }else{
-            part1.classList.remove("show");
+            part1.classList.remove(showClass);
         }
         if(pageYOffset > part2.offsetTop){
-            part2.classList.add("show");
+            part2.classList.add(showClass);
         }else{
-            part2.classList.remove("show");
+            part2.classList.remove(showClass);
         }
         if(pageYOffset > part3.offsetTop){
-            part3.classList.add("show");
+            part3.classList.add(showClass);
         }else{
-            part3.classList.remove("show");
+            part3.classList.remove(showClass);
         }
         if(pageYOffset > part4.offsetTop){
-            part4.classList.add("show");
+            part4.classList.add(showClass);
         }else{
-            part4.classList.remove("show");
+            part4.classList.remove(showClass);
         }
         if(pageYOffset > part5.offsetTop){
-            part5.classList.add("show");
+            part5.classList.add(showClass);
         }else{
-            part5.classList.remove("show");
+            part5.classList.remove(showClass);
         }
         if(pageYOffset > part6.offsetTop){
-            part6.classList.add("show");
+            part6.classList.add(showClass);
         }else{
-            part6.classList.remove("show");
+            part6.classList.remove(showClass);
         }
         if(pageYOffset > part7.offsetTop){
-            part7.classList.add("show");
+            part7.classList.add(showClass);
         }else{
-            part7.classList.remove("show");
+            part7.classList.remove(showClass);
         }
         if(pageYOffset > part8.offsetTop){
-            part8.classList.add("show");
+            part8.classList.add(showClass);
         }else{
-            part8.classList.remove("show");
+            part8.classList.remove(showClass);
         }
         }
       })

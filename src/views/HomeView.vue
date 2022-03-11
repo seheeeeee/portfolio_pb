@@ -88,9 +88,9 @@ export default {
   },
   methods: {
     resizeBoxHeight(){
-      var boxes = document.querySelectorAll('.box');
-      for (var i = 0; i < boxes.length; i++){
-        var box = boxes[i];
+      let boxes = document.querySelectorAll('.box');
+      for (let i = 0; i < boxes.length; i++){
+        let box = boxes[i];
         box.style.height = (window.innerHeight) + 'px';
       }
     },
@@ -107,7 +107,7 @@ export default {
       let count = document.createTextNode(`${this.count}  of 3`);
       countBox.className = 'countBox';
       countBox.appendChild(count);
-      var wrap = document.querySelector('.wrap');
+      let wrap = document.querySelector('.wrap');
       wrap.appendChild(countBox);
       countBox.style.cssText = `position: absolute;
                                 left: 50%;
@@ -136,7 +136,7 @@ export default {
   },
   mounted(){
     this.endLoading();
-    var homeWrap = document.querySelector('.wrap');
+    let homeWrap = document.querySelector('.wrap');
     pageHeight(homeWrap);
     this.resizeBoxHeight();
     window.addEventListener('resize', this.resizeBoxHeight);

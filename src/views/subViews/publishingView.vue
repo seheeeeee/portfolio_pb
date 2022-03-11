@@ -95,40 +95,42 @@ export default {
   methods:{
     showContent(){
       window.addEventListener('scroll', () =>{
-        let pageYOffset = parseInt(window.pageYOffset);
-        // console.log(parseInt(pageYOffset));
-
-        let semantic = document.querySelectorAll('.semantic .content');
-        let responsive = document.querySelectorAll('.responsive .content');
-        let mResponsive = document.querySelectorAll('.responsive .content .mimgBox');
+        const pageYOffset = parseInt(window.pageYOffset);
+        const semantic = document.querySelectorAll('.semantic .content');
+        const responsive = document.querySelectorAll('.responsive .content');
+        const mResponsive = document.querySelectorAll('.responsive .content .mimgBox');
         
-        for(var i = 0; i < semantic.length; i++){
+        const showClass = 'show';
+
+        for(let i = 0; i < semantic.length; i++){
           if(pageYOffset > semantic[i].offsetTop-500){
-              semantic[i].classList.add("show");
+              semantic[i].classList.add(showClass);
           }
         }
-        for(var j = 0; j < responsive.length; j++){
+        for(let j = 0; j < responsive.length; j++){
           if(pageYOffset > responsive[j].offsetTop-500){
-              responsive[j].classList.add("show");
+              responsive[j].classList.add(showClass);
           }
         }
-        for(var m = 0; m < mResponsive.length; m++){
+        for(let m = 0; m < mResponsive.length; m++){
           if(pageYOffset > mResponsive[m].offsetTop-700){
-              mResponsive[m].classList.add("show");
+              mResponsive[m].classList.add(showClass);
           }
         }
       })
     },
     removeShow(){
-        let semantic = document.querySelectorAll('.semantic .content');
-        let responsive = document.querySelector('.responsive .content');
-        let mResponsive = document.querySelector('.responsive .content .mimgBox');
+        const semantic = document.querySelectorAll('.semantic .content');
+        const responsive = document.querySelector('.responsive .content');
+        const mResponsive = document.querySelector('.responsive .content .mimgBox');
 
-        for(var i = 0; i < semantic.length; i++){
-          semantic[i].classList.remove("show");
+        const showClass = 'show';
+
+        for(let i = 0; i < semantic.length; i++){
+          semantic[i].classList.remove(showClass);
         }
-        responsive.classList.remove("show");
-        mResponsive.classList.remove("show");
+        responsive.classList.remove(showClass);
+        mResponsive.classList.remove(showClass);
 
     }
   },

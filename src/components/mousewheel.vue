@@ -21,9 +21,9 @@ export default {
             let str = this.strTitle.split("");
             let strBox = document.querySelector(`.${this.strClass} .strBox`);
 
-            var paraArr = document.createElement('div');
+            let paraArr = document.createElement('div');
             for(let i = 0; i < str.length; i++){
-                var para = document.createElement('span');
+                let para = document.createElement('span');
                 let node = document.createTextNode(str[i]);
                 para.appendChild(node);
                 paraArr.appendChild(para);
